@@ -1,0 +1,201 @@
+/*-----------FUENTES-------------*/
+
+
+/*Base*/
+
+*{
+  text-align: center;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.bac-color {
+  background-color: rgb(240, 240, 240);
+}
+
+
+/* --------------HEADER--------------- */
+
+header h1 {
+justify-content: center;
+font-size: 50px;
+padding: 3%;
+font-family:'Times New Roman', Times, serif;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+header a {
+  color: inherit;
+}
+
+header ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+header nav{
+background-color:black ;
+color: white;
+}
+
+/*-----------PROMOCIONES DEL INICIO-----------------*/
+
+.carousel-item img{
+  width: 100%;
+  height: 60vh;
+  object-fit:cover;
+  overflow: hidden;
+}
+
+
+
+/* --------------------- PRODUCTOS EN PROMOCION --------------- */
+
+h2 {
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Contenedor de promos general */
+.contenedor-p-promo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+/* Contenedor de cada producto en promoción*/
+.producto-en-promo {
+  background-color: white;
+  border-radius: 10%;
+  height: 30%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  margin: 3%;
+}
+
+/* Imagen de producto en promoción */
+.producto-en-promo img {
+  width: 80%;
+}
+
+/*Info de producto*/
+
+.producto-en-promo div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* ---------------SOBRE NOSOTROS Y HORARIO -----------------*/
+
+.sobre-nos-hora{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+/*---------------UBICACION---------------*/
+
+/* Mapa de Google con la ubicación*/
+.mapa {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ---------------- FOOTER ---------------*/
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer-cont{
+  background-color: black;
+  color: white;
+  display: grid;
+  height: 40%;
+  width: 100%;
+  padding: 2%;
+}
+
+.footer-info{
+  padding: 1%;
+}
+
+/* ----------- RESPONSIVE ----------------*/
+
+@media(min-width:768px) and (orientation:landscape) {
+
+  .navbar{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+.navbar ul li {
+  padding-left: 3%;
+  padding-right: 3%;
+  justify-content: space-around;
+}
+  .carousel-item img{
+    width: 100%;
+    height: 70vh;
+    object-fit:cover;
+    overflow: hidden;
+  }
+  .contenedor-p-promo{
+    height:50%;
+    flex-direction: row;
+    padding-bottom: 3%;
+  }
+  .producto-en-promo{
+    height: 90%;
+    width: 30%;
+    padding: 1%;
+    margin: 1%;
+  }
+
+  header h1{
+    font-size: 100px;
+    padding: 2%;
+  }
+
+  .footer-cont{
+
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(4,22%);
+  justify-content: space-evenly;
+}
+
+footer h3{
+  font-size: 1.5rem;
+  }
+
+
+
+}

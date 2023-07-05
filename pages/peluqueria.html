@@ -5,28 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Agenda</title>
 </head>
 
 <body>
-    <header>
-
-        <h1>Peluquería</h1>
-        <hr>
-
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./peluqueria.html">Peluquería</a></li>
-                <li><a href="./productos.html">Productos</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./sob_nosotros.html">Sobre nosotros</a></li>
-                <li><a href="./extras.html">Extras</a></li>
+    <header class="container">
+      
+        <nav class="navbar navbar-expand-md navbar-dark bg-black">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!-- logo -->
+          <a class="navbar-brand" href="#">
+            <h1>Peluquería</h1>
+          </a>
+          
+          <!-- enlaces -->
+          <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="../index.html">Inicio</a></li>
+              </li>
+              <li class="nav-item">
+                <a href="../pages/peluqueria.html">Peluquería</a>
+              </li>
+              <li class="nav-item">
+                <a href="../pages/productos.html">Productos</a></li>
+              </li>
+              <li class="nav-item">
+                <a href="../pages/contacto.html">Contacto</a></li>
+              </li>
+              <li>
+                <a href="../pages/sob_nosotros.html">Sobre nosotros</a></li>
+              </li>            
+              <li>
+                <a href="../pages/extras.html">Extras</a></li>
+              </li>
             </ul>
+          </div>
         </nav>
-        <hr>
-
-    </header>
+  
+      </header>
 
     <main>
 
@@ -109,24 +132,25 @@
 
     </main>
 
-    <footer>
-        <hr>
-        <div>
-            <a href="./contacto.html">Contacto</a>
+    <footer class="container footer-cont">
+        <div class="footer-info">
+            <h3>Contacto</h3>
+            <p><a href="../pages/contacto.html">Llena el formulario de contacto haciendo click aquí</a></p>
+            
         </div>
-        <div>
+        <div class="footer-info">
             <h3>Dirección:</h3>
             <p>Algun Lado 3399 esquina Una Esquina</p>
         </div>
-        <div>
+        <div class="footer-info">
             <h3>Redes Sociales</h3>
             <ul>
-                <li><a href="">facebook</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Youtube</a></li>
-                <li><a href="">Twitter</a></li>
+                <li><a href="https://es-la.facebook.com/" target="_blank">facebook</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
+                <li><a href="https://twitter.com/?lang=es" target="blank">Twitter</a></li>
             </ul>
-        </div>
+        </div class="footer-info">
         <div>
             <h3>Horario de atención</h3>
             <p>Lunes a Viernes: <br>
@@ -135,9 +159,11 @@
                 10:00 hs a 14:30 hs
             </p>
         </div>
-    </footer>
+  </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
 </body>
 
