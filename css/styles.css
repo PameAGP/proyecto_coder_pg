@@ -24,12 +24,12 @@ a {
 
 /* --------------HEADER--------------- */
 
-header h1 {
-justify-content: center;
-font-size: 50px;
-padding: 3%;
-font-family:'Times New Roman', Times, serif;
-}
+header nav a h1 {
+  justify-content: center;
+  padding: 3%;
+  font-size: 2rem;
+  font-family:'Times New Roman', Times, serif;
+  }
 
 header {
   background-color: black;
@@ -54,6 +54,10 @@ background-color:black ;
 color: white;
 }
 
+.navbar{
+  justify-content: space-evenly;
+}
+
 /*-----------PROMOCIONES DEL INICIO-----------------*/
 
 .carousel-item img{
@@ -65,7 +69,7 @@ color: white;
 
 
 
-/* --------------------- PRODUCTOS EN PROMOCION --------------- */
+/* --------------------- PRODUCTOS EN GENERAL --------------- */
 
 h2 {
   padding: 2rem;
@@ -73,7 +77,7 @@ h2 {
 }
 
 /* Contenedor de promos general */
-.contenedor-p-promo {
+.contenedor-producto {
   height: 100%;
   width: 100%;
   display: flex;
@@ -84,7 +88,7 @@ h2 {
 }
 
 /* Contenedor de cada producto en promoción*/
-.producto-en-promo {
+.producto {
   background-color: white;
   border-radius: 10%;
   height: 30%;
@@ -96,13 +100,13 @@ h2 {
 }
 
 /* Imagen de producto en promoción */
-.producto-en-promo img {
+.producto img {
   width: 80%;
 }
 
 /*Info de producto*/
 
-.producto-en-promo div {
+.producto div {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -155,25 +159,29 @@ footer a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-size: 1rem;
+  }
+
+  header nav a h1 {
+    font-size: 6rem;
   }
 .navbar ul li {
   padding-left: 3%;
   padding-right: 3%;
   justify-content: space-around;
 }
+
   .carousel-item img{
     width: 100%;
     height: 70vh;
     object-fit:cover;
     overflow: hidden;
   }
-  .contenedor-p-promo{
+  .contenedor-producto{
     height:50%;
     flex-direction: row;
     padding-bottom: 3%;
   }
-  .producto-en-promo{
+  .producto{
     height: 90%;
     width: 30%;
     padding: 1%;
@@ -197,5 +205,5 @@ footer h3{
   }
 
 
-
+  
 }
