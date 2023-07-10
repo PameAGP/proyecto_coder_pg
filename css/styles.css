@@ -26,27 +26,22 @@ a {
 
 /* --------------HEADER--------------- */
 
-header nav a h1 {
+.navbar-brand {
   justify-content: center;
   padding: 3%;
-  font-size: 2rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
 header {
   background-color: black;
   color: white;
-  text-align: center;
 }
 
 header a {
   color: inherit;
 }
 
-header ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.navbar-nav {
   padding: 1rem;
   font-size: 1.5rem;
 }
@@ -90,30 +85,8 @@ h2 {
 }
 
 /* Contenedor de cada producto en promoción*/
-.producto {
-  background-color: white;
-  border-radius: 10%;
-  height: 30%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  padding: 1%;
-  margin: 3%;
-}
 
-/* Imagen de producto en promoción */
-.producto img {
-  width: 80%;
-}
 
-/*Info de producto*/
-
-.producto div {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 /* ---------------SOBRE NOSOTROS Y HORARIO -----------------*/
 
@@ -155,6 +128,11 @@ footer a {
   color: white;
 }
 
+.footer-base {
+  background-color: black;
+  width: 100%;
+}
+
 .footer-cont {
   background-color: black;
   color: white;
@@ -175,6 +153,7 @@ footer h3 {
 footer p {
   font-size: 0.8rem;
 }
+
 footer ul {
   font-size: 0.8rem;
 }
@@ -183,9 +162,12 @@ footer ul {
 
 /*----------Articulo-----------*/
 
-.articulos-cont img{
+.titles{
+  margin: 1rem;
+}
+.card-img-top {
   width: 100%;
-  height: 40vh;
+  height: 45vh;
   object-fit: cover;
   overflow: hidden;
 }
@@ -198,27 +180,40 @@ footer ul {
 
 }
 
-.articulos .card{
+.articulos .card {
   width: 90%;
   max-width: 300px;
   margin-top: 2%;
   margin-bottom: 2%;
 }
+.card-sec-title{
+  font-size: 1.1rem;
+  color: grey;
+}
 
-.articulos .card .card-body p{
+.card-text {
   height: 100px;
   object-fit: cover;
   overflow: hidden;
   text-align: justify;
 }
 
-.articulos .card .card-body h5 {
-  display: flex;
-  height: 80px;
+.card-title{
+  height: 4rem;
+  font-size: 1.2rem;
   object-fit: cover;
   overflow: hidden;
-align-items: center;
+  align-items: center;
   justify-content: center;
+}
+
+.card-title-tarj{
+  height: 2rem;
+}
+
+.btn{
+  background-color: black;
+  border-color: black;
 }
 
 
@@ -256,17 +251,49 @@ align-items: center;
   }
 
   /*Productos y sus contenedores*/
+
   .contenedor-producto {
-    height: 50%;
+    height: 35%;
     flex-direction: row;
     padding-bottom: 3%;
+    justify-content: center;
+    align-content: center;
   }
 
   .producto {
-    height: 90%;
+    display: grid;
+    grid-template-rows: 60% 40%;
+    align-self: center;
     width: 30%;
+    height: 90%;
     padding: 1%;
     margin: 1%;
+  }
+
+.producto div h4{
+  font-size: 1.2rem;
+  max-height: 1.5rem;
+  overflow: hidden;
+  justify-self: center;
+}
+
+.producto div p{
+  font-size: 1rem;
+  max-height: 2rem;
+  overflow: hidden;
+  
+}
+.producto div span{
+  font-size: 1rem;
+  max-height: 1.2rem;
+  overflow: hidden;
+}
+  .producto a{
+    
+   
+
+    object-fit:cover;
+    overflow: hidden;
   }
 
   /*Sobre Nosotros*/
@@ -292,12 +319,12 @@ align-items: center;
 
   /* ---------------Sección extras---------------- */
 
-/*----------Articulo-----------*/
+  /*----------Articulo-----------*/
 
-.articulos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  .articulos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
 
 }

@@ -13,6 +13,7 @@
 
 <body bac-color>
 
+  <!--  1. Portada y nav  -->
   <header>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
@@ -20,7 +21,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- logo -->
+      <!--Nombre de la empresa-->
       <a class="navbar-brand" href="#">
         <h1>Peluquería</h1>
       </a>
@@ -58,7 +59,7 @@
   </header>
 
   <main>
-
+<!--  2. Promociones luego de Header  -->
     <section class="container bac-color">
 
       <div id="carouselExampleCaptions" class="carousel slide">
@@ -129,43 +130,46 @@
 
     </section>
 
+    <!--  3. Productos destacados -->
     <h2 class="container bac-color">Productos destacados</h2>
 
-    <section class="container contenedor-producto bac-color">
+    <section class="articulos-cont container bac-color">
 
-      <article class="producto">
-        <a href="./pages/productos.html">
-          <img src="./img/cera_cabello_3.jpeg" alt="Cera gel destacada">
-        </a>
+      <section class="articulos">
 
-        <div>
-          <h4>Cera Gel para barba</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <span>$330</span>
+        <div class="card" >
+          <img src="https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/3/0/30335_10_1.jpg" class="card-img-top" alt="Crema de peinar Pantene">
+          <div class="card-body">
+            <h5 class="card-title">Crema de peinar Pantene</h5>
+            <p class="card-text">La crema de peinar Rizos Definidos de Pantene cuenta con el poder de la exclusiva fórmula Pro-V de Pantene y su nuevo envase te permite encontrar fácilmente el producto ideal para tu tipo de cabello.</p>
+            <a href="https://tienda.farmashop.com.uy/cuidado-personal/cuidado-capilar/cremas-para-peinar/pantene-crema-peinar-r-definidos-300-ml.html" target="_blank" class="btn btn-primary">Comprar</a>
+          </div>
         </div>
-      </article>
 
-      <article class="producto">
-        <a href="./pages/productos.html"> <img src="./img/crema_de_peinar_pantene.jpg" alt="Crema de peinar Pantene">
-        </a>
-        <div class="info-prod">
-          <h4>Crema de peinar</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-          <span>$145</span>
+        <div class="card" >
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_829015-MLU41018740930_032020-F.webp" class="card-img-top" alt="Cera pelo y barba capilatis">
+          <div class="card-body">
+            <h5 class="card-title">Cera Pelo & Barba Capilatis Hombre</h5>
+            <p class="card-text">Barba perfecta e impecable: cera de modelado para dar forma a distintos tipos de barba. Hidrata, suaviza y define los contornos manteniendo un aspecto natural. Ofrece fijación y estilo, minimizando el encrespamiento en barbas rebeldes. Peinados de larga duración: apta para todo tipo de cabellos, permite definir peinados con precisión y sostener estilos únicos con total control. Especialmente útil para hombres que desean pelo & barba imponentes, alineados y sin frizz.
+            </p>
+            <a href="https://articulo.mercadolibre.com.uy/MLU-459816751-cera-pelo-barba-capilatis-hombre-55-ml-_JM#position=35&search_layout=stack&type=item&tracking_id=81417e40-0beb-4311-93ea-e8397c2727df" target="_blank" class="btn btn-primary">Comprar</a>
+          </div>
         </div>
-      </article>
 
-      <article class="producto">
-        <a href="./pages/productos.html"> <img src="img/gel_1.jpg" alt="Gel"> </a>
-        <div>
-          <h4>Gel para el cabello</h4>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-          <span>$246<span>
+        <div class="card" >
+          <img src="https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/8/7/87959_001.jpg" class="card-img-top" alt="Cera gel promicia efecto mojado">
+          <div class="card-body">
+            <h5 class="card-title">Gel Primicia Modelador Efecto Mojado</h5>
+            <p class="card-text">¡Nada más atractivo que lucir un peinado impecable y único!  Gel modelador para cabello Primicia con fijación media para dar un efecto mojado y un brillo intenso.</p>
+            <a href="https://tienda.farmashop.com.uy/primicia-cera-gel-flexible-130-gr.html" target="_blank" class="btn btn-primary">Comprar</a>
+          </div>
         </div>
-      </article>
 
+      </section>
+      
     </section>
 
+    <!--  4. Sobre nostros y horario-->
     <section class="container bac-color">
       <div class="row">
         <div class="sobre-nos-hora col-12 col-md-6">
@@ -192,6 +196,7 @@
       </div>
     </section>
 
+    <!--  5. Mapa  -->
     <section>
       <div><iframe class="container mapa bac-color"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6544.182153698183!2d-56.19872150192111!3d-34.904163842545124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f802d934f2cbd%3A0x23b5034c707bf9fe!2sCentro%2C%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses!2suy!4v1686019908902!5m2!1ses!2suy"
@@ -201,34 +206,38 @@
 
   </main>
 
-  <footer class="footer-cont">
-    <div class="footer-info">
-      <h3>Contacto</h3>
-      <p><a href="./pages/contacto.html">Llena el formulario de contacto haciendo click aquí</a></p>
+  <!-- 6. Pie -->
+  <footer class="footer-base">
 
+    <div class="container  footer-cont">
+    <div class="footer-info">
+        <h3>Contacto</h3>
+        <p><a href="./pages/contacto.html">Llena el formulario de contacto haciendo click aquí</a></p>
+        
     </div>
     <div class="footer-info">
-      <h3>Dirección:</h3>
-      <p>Algun Lado 3399 esquina Una Esquina</p>
+        <h3>Dirección:</h3>
+        <p>Algun Lado 3399 esquina Una Esquina</p>
     </div>
     <div class="footer-info">
-      <h3>Redes Sociales</h3>
-      <ul>
-        <li><a href="https://es-la.facebook.com/" target="_blank">facebook</a></li>
-        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-        <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
-        <li><a href="https://twitter.com/?lang=es" target="blank">Twitter</a></li>
-      </ul>
+        <h3>Redes Sociales</h3>
+        <ul>
+            <li><a href="https://es-la.facebook.com/" target="_blank">facebook</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
+            <li><a href="https://twitter.com/?lang=es" target="blank">Twitter</a></li>
+        </ul>
     </div class="footer-info">
     <div>
-      <h3>Horario de atención</h3>
-      <p>Lunes a Viernes: <br>
-        10:00 hs a 19:00 hs <br>
-        Sábado <br>
-        10:00 hs a 14:30 hs
-      </p>
+        <h3>Horario de atención</h3>
+        <p>Lunes a Viernes: <br>
+            10:00 hs a 19:00 hs <br>
+            Sábado <br>
+            10:00 hs a 14:30 hs
+        </p>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
