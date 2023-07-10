@@ -1,8 +1,3 @@
-/*-----------FUENTES-------------*/
-
-
-/*Base*/
-
 * {
   text-align: center;
   margin: 0;
@@ -24,104 +19,93 @@ a {
   background-color: rgb(240, 240, 240);
 }
 
-/* --------------HEADER--------------- */
-
-.navbar-brand {
-  justify-content: center;
-  padding: 3%;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-header {
-  background-color: black;
-  color: white;
-}
-
-header a {
-  color: inherit;
-}
-
-.navbar-nav {
-  padding: 1rem;
-  font-size: 1.5rem;
-}
-
-header nav {
-  background-color: black;
-  color: white;
-}
-
-.navbar {
-  justify-content: space-evenly;
-}
-
-/*-----------PROMOCIONES DEL INICIO-----------------*/
-
-.carousel-item img {
-  width: 100%;
-  height: 60vh;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-
-
-/* --------------------- PRODUCTOS EN GENERAL --------------- */
-
 h2 {
   padding: 2rem;
   margin: 0;
 }
 
-/* Contenedor de promos general */
-.contenedor-producto {
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5rem;
+}
+
+.navbar-nav {
+  display: grid;
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-/* Contenedor de cada producto en promoción*/
-
-
-
-/* ---------------SOBRE NOSOTROS Y HORARIO -----------------*/
-
-.sobre-nos-hora {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-.cont-tarjetas {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
 }
 
-.cont-tarjetas .card {
-  min-width: 70%;
-  max-width: 200px;
+/*Tablet*/
+@media (min-width: 768px) {
+  h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 4rem;
+  }
+  .container-fluid {
+    flex-direction: column;
+  }
+  .navbar-nav {
+    grid-template-columns: repeat(6, 1fr);
+    font-size: 1.5rem;
+  }
+}
+/*Desktop*/
+.titles {
   margin: 1rem;
 }
 
-/*---------------UBICACION---------------*/
-
-/* Mapa de Google con la ubicación*/
-.mapa {
-  height: 50vh;
+.card-img-top {
   width: 100%;
+  height: 45vh;
   object-fit: cover;
-  padding: 0;
+  overflow: hidden;
 }
 
-/* ---------------- FOOTER ---------------*/
+.articulos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.articulos .card {
+  width: 90%;
+  max-width: 300px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.card-sec-title {
+  font-size: 1.1rem;
+  color: grey;
+}
+
+.card-text {
+  height: 100px;
+  object-fit: cover;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.card-title {
+  height: 4rem;
+  font-size: 1.2rem;
+  object-fit: cover;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title-tarj {
+  height: 2rem;
+}
+
+.btn {
+  background-color: black;
+  border-color: black;
+}
 
 footer a {
   text-decoration: none;
@@ -158,192 +142,25 @@ footer ul {
   font-size: 0.8rem;
 }
 
-/* ---------------Sección extras---------------- */
-
-/*----------Articulo-----------*/
-
-.titles{
-  margin: 1rem;
-}
-.card-img-top {
+.carousel-item img {
   width: 100%;
-  height: 45vh;
+  height: 60vh;
   object-fit: cover;
   overflow: hidden;
 }
 
-.articulos {
-  display: flex;
-  align-items: center;
+.sobre-nos-hora {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.mapa {
+  height: 50vh;
   width: 100%;
-  flex-direction: column;
-
-}
-
-.articulos .card {
-  width: 90%;
-  max-width: 300px;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-.card-sec-title{
-  font-size: 1.1rem;
-  color: grey;
-}
-
-.card-text {
-  height: 100px;
   object-fit: cover;
-  overflow: hidden;
-  text-align: justify;
+  padding: 0;
 }
 
-.card-title{
-  height: 4rem;
-  font-size: 1.2rem;
-  object-fit: cover;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-title-tarj{
-  height: 2rem;
-}
-
-.btn{
-  background-color: black;
-  border-color: black;
-}
-
-
-
-/* ----------- RESPONSIVE ----------------*/
-/*Celular*/
-@media(min-width:768px) and (orientation:landscape) {
-
-  /*Barra de navegación*/
-  .navbar {
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  header nav a h1 {
-    font-size: 6rem;
-  }
-
-  .navbar ul li {
-    font-size: 1.1rem;
-    display: flex;
-    width: 125px;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  /*Carusel*/
-  .carousel-item img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-    overflow: hidden;
-  }
-
-  /*Productos y sus contenedores*/
-
-  .contenedor-producto {
-    height: 35%;
-    flex-direction: row;
-    padding-bottom: 3%;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .producto {
-    display: grid;
-    grid-template-rows: 60% 40%;
-    align-self: center;
-    width: 30%;
-    height: 90%;
-    padding: 1%;
-    margin: 1%;
-  }
-
-.producto div h4{
-  font-size: 1.2rem;
-  max-height: 1.5rem;
-  overflow: hidden;
-  justify-self: center;
-}
-
-.producto div p{
-  font-size: 1rem;
-  max-height: 2rem;
-  overflow: hidden;
-  
-}
-.producto div span{
-  font-size: 1rem;
-  max-height: 1.2rem;
-  overflow: hidden;
-}
-  .producto a{
-    
-   
-
-    object-fit:cover;
-    overflow: hidden;
-  }
-
-  /*Sobre Nosotros*/
-  .cont-tarjetas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-  }
-
-  .card {
-    justify-self: center;
-    align-self: center;
-  }
-
-  /*Footer*/
-  .footer-cont {
-
-    grid-template-rows: 100%;
-    grid-template-columns: repeat(4, 22%);
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  /* ---------------Sección extras---------------- */
-
-  /*----------Articulo-----------*/
-
-  .articulos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-
-}
-
-/*Tablet*/
-
-@media(min-width:1024px) {
-
-  .cont-tarjetas {
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-  }
-
-  .con.tarjetas .card {
-    justify-self: center;
-    align-self: center;
-  }
-
-
-}
+/*# sourceMappingURL=styles.css.map */

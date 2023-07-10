@@ -1,0 +1,53 @@
+.titles{
+    margin: 1rem;
+  }
+  .card-img-top {
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  .articulos {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  
+  }
+  
+  .articulos .card {
+    width: 90%;
+    max-width: 300px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .card-sec-title{
+    font-size: 1.1rem;
+    color: grey;
+  }
+  
+  .card-text {
+    height: 100px;
+    object-fit: cover;
+    overflow: hidden;
+    text-align: justify;
+  }
+  
+  .card-title{
+    height: 4rem;
+    font-size: 1.2rem;
+    object-fit: cover;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-title-tarj{
+    height: 2rem;
+  }
+  
+  .btn{
+    background-color: black;
+    border-color: black;
+  }
