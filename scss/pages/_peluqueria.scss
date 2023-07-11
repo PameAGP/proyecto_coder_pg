@@ -1,0 +1,47 @@
+.agenda {
+    display: grid;
+
+    div{
+        padding: 2%;
+    }
+    &-2{
+        padding: 3%;
+    }
+
+    &-3{
+        padding: 3%;
+    }
+}
+
+@media(min-width:576px) {
+
+    .agenda {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &-title {
+            grid-column: span 2;
+        }
+
+        &-boton {
+            grid-column: span 2;
+        }
+
+        div{
+            padding: 3%;
+            align-self: center;
+        }
+    }
+
+}
+
+@media(min-width:768px) {
+    .pelu{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .agenda-3{
+        grid-column: span 2;
+    }
+}

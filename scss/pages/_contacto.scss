@@ -1,0 +1,79 @@
+.contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &-seccion {
+        display: flex;
+        padding-bottom: 6%;
+        flex-direction: column;
+
+    }
+
+    &-mapa {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+@media(min-width:576px){
+    .contacto-seccion{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        h3{
+            grid-column: span 2;
+        }
+
+        &-horario{
+            grid-column: span 2;
+        }
+    }
+
+    .consulta{
+        grid-row: span 4;
+    }
+
+    .contacto-boton{
+        grid-column: span 2;
+    }
+}
+
+
+@media(min-width: 992px) {
+    .contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        &-seccion {
+            h3{
+                text-align: left;
+                padding: 1.5rem;
+            }
+            div {
+                text-align: left;
+                padding-left: 1.5rem;
+                padding-right: 1.5 rem;
+    
+                p {
+                    text-align: left;
+                }
+                input{
+                    text-align: left;
+                }
+                textarea{
+                    text-align: left;
+                }
+            }
+        }
+
+        &-boton {
+            justify-self: center;
+        }
+
+        &-mapa {
+            overflow: hidden;
+        }
+    }
+
+}

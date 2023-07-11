@@ -1,53 +1,59 @@
-.titles{
-    margin: 1rem;
-  }
-  .card-img-top {
-    width: 100%;
-    height: 45vh;
-    object-fit: cover;
-    overflow: hidden;
-  }
-  
-  .articulos {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-  
-  }
-  
-  .articulos .card {
+
+.articulos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  .card {
     width: 90%;
     max-width: 300px;
     margin-top: 2%;
     margin-bottom: 2%;
-  }
-  .card-sec-title{
-    font-size: 1.1rem;
-    color: grey;
-  }
+
+    &-img-top {
+      width: 100%;
+      height: 45vh;
+      object-fit: cover;
+      overflow: hidden;
+    }
   
-  .card-text {
-    height: 100px;
-    object-fit: cover;
-    overflow: hidden;
-    text-align: justify;
-  }
+    &-sec-title {
+      font-size: 1.1rem;
+      color: grey;
+    }
   
-  .card-title{
-    height: 4rem;
-    font-size: 1.2rem;
-    object-fit: cover;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-  }
+    &-text {
+      height: 100px;
+      object-fit: cover;
+      overflow: hidden;
+      text-align: justify;
+    }
   
-  .card-title-tarj{
-    height: 2rem;
+    &-title {
+      height: 4rem;
+      font-size: 1.2rem;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
   }
+
   
-  .btn{
-    background-color: black;
-    border-color: black;
+}
+
+/*Tablet*/
+@media(min-width: 768px) {
+
+  .articulos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
+
+}
+
+@media (min-width: 992px) {
+  .articulos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

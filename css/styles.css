@@ -24,6 +24,12 @@ h2 {
   margin: 0;
 }
 
+.btn {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
 h1 {
   font-family: "Times New Roman", Times, serif;
   font-size: 2.5rem;
@@ -51,72 +57,70 @@ h1 {
     font-size: 1.5rem;
   }
 }
-/*Desktop*/
-.titles {
-  margin: 1rem;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 45vh;
-  object-fit: cover;
-  overflow: hidden;
-}
-
 .articulos {
   display: flex;
   align-items: center;
   width: 100%;
   flex-direction: column;
 }
-
 .articulos .card {
   width: 90%;
   max-width: 300px;
   margin-top: 2%;
   margin-bottom: 2%;
 }
-
-.card-sec-title {
+.articulos .card-img-top {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+.articulos .card-sec-title {
   font-size: 1.1rem;
   color: grey;
 }
-
-.card-text {
+.articulos .card-text {
   height: 100px;
   object-fit: cover;
   overflow: hidden;
   text-align: justify;
 }
-
-.card-title {
+.articulos .card-title {
   height: 4rem;
   font-size: 1.2rem;
   object-fit: cover;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
 }
 
-.card-title-tarj {
-  height: 2rem;
+/*Tablet*/
+@media (min-width: 768px) {
+  .articulos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
-.btn {
-  background-color: black;
-  border-color: black;
+@media (min-width: 992px) {
+  .articulos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
-
 footer a {
-  text-decoration: none;
   color: white;
 }
+footer h3 {
+  font-size: 1rem;
+}
+footer p {
+  font-size: 0.8rem;
+}
+footer ul {
+  font-size: 0.8rem;
+}
 
-.footer-base {
+.footer {
   background-color: black;
   width: 100%;
 }
-
 .footer-cont {
   background-color: black;
   color: white;
@@ -125,28 +129,93 @@ footer a {
   width: 100%;
   padding: 2%;
 }
-
 .footer-info {
   padding: 1%;
+  align-self: center;
 }
 
-footer h3 {
-  font-size: 1rem;
+@media (min-width: 576px) {
+  .footer-cont {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .footer-cont {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contacto-seccion {
+  display: flex;
+  padding-bottom: 6%;
+  flex-direction: column;
+}
+.contacto-mapa {
+  object-fit: cover;
+  width: 100%;
 }
 
-footer p {
-  font-size: 0.8rem;
+@media (min-width: 576px) {
+  .contacto-seccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contacto-seccion h3 {
+    grid-column: span 2;
+  }
+  .contacto-seccion-horario {
+    grid-column: span 2;
+  }
+  .consulta {
+    grid-row: span 4;
+  }
+  .contacto-boton {
+    grid-column: span 2;
+  }
 }
-
-footer ul {
-  font-size: 0.8rem;
+@media (min-width: 992px) {
+  .contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contacto-seccion h3 {
+    text-align: left;
+    padding: 1.5rem;
+  }
+  .contacto-seccion div {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 1.5 rem;
+  }
+  .contacto-seccion div p {
+    text-align: left;
+  }
+  .contacto-seccion div input {
+    text-align: left;
+  }
+  .contacto-seccion div textarea {
+    text-align: left;
+  }
+  .contacto-boton {
+    justify-self: center;
+  }
+  .contacto-mapa {
+    overflow: hidden;
+  }
 }
-
 .carousel-item img {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   object-fit: cover;
   overflow: hidden;
+}
+
+.carousel-caption a {
+  color: white;
 }
 
 .sobre-nos-hora {
@@ -161,6 +230,45 @@ footer ul {
   width: 100%;
   object-fit: cover;
   padding: 0;
+}
+
+.agenda {
+  display: grid;
+}
+.agenda div {
+  padding: 2%;
+}
+.agenda-2 {
+  padding: 3%;
+}
+.agenda-3 {
+  padding: 3%;
+}
+
+@media (min-width: 576px) {
+  .agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .agenda-title {
+    grid-column: span 2;
+  }
+  .agenda-boton {
+    grid-column: span 2;
+  }
+  .agenda div {
+    padding: 3%;
+    align-self: center;
+  }
+}
+@media (min-width: 768px) {
+  .pelu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .agenda-3 {
+    grid-column: span 2;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
