@@ -97,6 +97,14 @@ h1 {
   .articulos {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  .card {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
   }
 }
 @media (min-width: 992px) {
@@ -147,7 +155,6 @@ footer ul {
 .contacto {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .contacto-seccion {
   display: flex;
@@ -269,6 +276,9 @@ footer ul {
   .agenda-3 {
     grid-column: span 2;
   }
+}
+.title {
+  padding-top: 3%;
 }
 
 /*# sourceMappingURL=styles.css.map */

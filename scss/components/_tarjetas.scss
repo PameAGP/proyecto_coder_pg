@@ -48,6 +48,15 @@
   .articulos {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .card{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
   }
 
 }
