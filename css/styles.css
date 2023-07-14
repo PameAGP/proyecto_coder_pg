@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,400;0,500;1,400;1,700&family=Mr+Dafoe&family=Petit+Formal+Script&display=swap");
 * {
   text-align: center;
   margin: 0;
@@ -26,12 +27,16 @@ h2 {
 
 .btn {
   background: radial-gradient(grey, black);
-  border-color: black;
+  border: black;
   color: white;
 }
 
+.btn:hover {
+  background: radial-gradient(black, grey);
+}
+
 h1 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Petit Formal Script", "Times new roman";
   font-size: 2.5rem;
 }
 
@@ -43,11 +48,10 @@ h1 {
   font-size: 1.5rem;
 }
 
-/*Tablet*/
 @media (min-width: 768px) {
   h1 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 4rem;
+    font-size: 5rem;
+    padding: 3%;
   }
   .container-fluid {
     flex-direction: column;
@@ -56,25 +60,31 @@ h1 {
     grid-template-columns: repeat(6, 1fr);
     font-size: 1.5rem;
   }
+  .navbar-nav .nav-item .nav-link:hover {
+    transform: scale(1.1);
+  }
 }
 .articulos {
   display: flex;
   align-items: center;
   width: 100%;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 .articulos .card {
   width: 90%;
-  max-width: 300px;
+  max-width: 350px;
   margin-top: 2%;
   margin-bottom: 2%;
+  border: none;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.508);
 }
 .articulos .card-img-top {
-  width: 100%;
+  width: 85%;
   height: 45vh;
-  object-fit: cover;
+  object-fit: scale-down;
   overflow: hidden;
+  align-self: center;
 }
 .articulos .card-sec-title {
   font-size: 1.1rem;
@@ -96,8 +106,10 @@ h1 {
 @media (min-width: 768px) {
   .articulos {
     display: grid;
+    gap: 1%;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    padding-top: 3%;
   }
   .card {
     align-items: center;
@@ -105,6 +117,16 @@ h1 {
     justify-content: center;
     justify-items: center;
     justify-self: center;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    border-top: none;
+  }
+  .card:hover .btn {
+    background: radial-gradient(black, grey);
   }
 }
 @media (min-width: 992px) {
@@ -160,7 +182,7 @@ footer p {
 }
 .contacto-seccion {
   display: flex;
-  padding-bottom: 6%;
+  padding-bottom: 10%;
   margin: 1%;
   flex-direction: column;
 }
@@ -177,7 +199,7 @@ footer p {
   .contacto-seccion h3 {
     grid-column: span 2;
   }
-  .contacto-seccion-horario {
+  .contacto-seccion .div1 {
     grid-column: span 2;
   }
   .consulta {
@@ -193,8 +215,7 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
   .contacto-seccion {
-    border-right: 2px solid rgb(210, 210, 210);
-    border-left: 2px solid rgb(210, 210, 210);
+    border-left: solid 1px rgb(188, 188, 188);
   }
   .contacto-seccion h3 {
     text-align: left;
@@ -243,17 +264,36 @@ footer p {
   padding-bottom: 5%;
   padding-left: 2%;
   padding-right: 2%;
+  border-top: solid 1px rgb(188, 188, 188);
+}
+.sobre-nos-hora h3 {
+  padding: 4%;
 }
 
-.mapa {
+.ubi {
+  border-top: solid 1px rgb(188, 188, 188);
+}
+.ubi h2 {
+  padding-bottom: 1%;
+}
+.ubi .mapa {
   height: 50vh;
   width: 100%;
   object-fit: cover;
   padding: 0;
 }
 
+@media (min-width: 576px) {
+  .sobre-nos-hora {
+    border: none;
+  }
+  .ubi {
+    border: none;
+  }
+}
 .agenda {
   display: grid;
+  padding: 5%;
 }
 .agenda div {
   padding: 2%;
@@ -264,17 +304,45 @@ footer p {
 .agenda-3 {
   padding: 3%;
 }
+.agenda-3 h3 {
+  text-align: left;
+}
+.agenda-3 ul {
+  list-style: circle;
+}
+.agenda-3 ul li {
+  text-align: left;
+}
 
 @media (min-width: 576px) {
   .agenda {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .agenda-title {
+  .agenda div {
+    text-align: left;
+  }
+  .agenda div input {
+    text-align: left;
+  }
+  .agenda .check-sb {
+    text-align: center;
+  }
+  .agenda h3 {
     grid-column: span 2;
+    text-align: left;
   }
   .agenda-boton {
     grid-column: span 2;
+  }
+  .agenda-2 {
+    padding-top: 7%;
+  }
+  .agenda-2 h3 {
+    text-align: left;
+  }
+  .agenda-2 p {
+    text-align: left;
   }
   .agenda div {
     padding: 3%;
@@ -284,14 +352,30 @@ footer p {
 @media (min-width: 768px) {
   .pelu {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 40%;
+  }
+  .agenda {
+    border-right: solid 1px rgb(188, 188, 188);
   }
   .agenda-3 {
+    padding-top: 3%;
+    border-top: solid 1px rgb(188, 188, 188);
     grid-column: span 2;
   }
 }
 .title {
   padding-top: 3%;
+}
+
+.articulos .card-img-ex {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+.articulos-extras {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

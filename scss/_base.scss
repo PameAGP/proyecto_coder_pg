@@ -1,34 +1,41 @@
 * {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  ul,
-  ol {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .bac-color {
-    background-color: rgb(240, 240, 240);
-  }
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  h2 {
-    padding: 2rem;
-    margin: 0;
-  }
+ul,
+ol {
+  list-style: none;
+}
 
-  .btn {
-    background: radial-gradient(grey, black);
-    border-color: black;
-    color: white;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  $capt: white;
-  $fhcb: black;
+.bac-color {
+  background-color: rgb(240, 240, 240);
+}
+
+h2 {
+  padding: 2rem;
+  margin: 0;
+}
+
+.btn {
+  background: radial-gradient(grey, black);
+  border: black;
+  color: white;
+}
+
+.btn:hover {
+  background: radial-gradient(black, grey);
+}
+
+$capt: white;
+$fhcb: black;
+$carr: rgb(156, 156, 156);
+$borde: 1px 1px 0 $carr, 1px -1px 0 $carr, -1px 1px 0 $carr, -1px -1px 0 $carr, 1px 0px 0 $carr, 0px 1px 0 $carr, -1px 0px 0 $carr, 0px -1px 0 $carr;
+$bor-sol: solid 1px rgb(188, 188, 188);

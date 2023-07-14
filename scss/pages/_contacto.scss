@@ -5,7 +5,7 @@
         
     &-seccion {
         display: flex;
-        padding-bottom: 6%;
+        padding-bottom: 10%;
         margin: 1%;
         flex-direction: column;
 
@@ -27,9 +27,11 @@
             grid-column: span 2;
         }
 
-        &-horario{
+        .div1{
             grid-column: span 2;
         }
+
+
     }
 
     .consulta{
@@ -48,9 +50,7 @@
         grid-template-columns: 1fr 1fr;
         
         &-seccion {
-
-            border-right: 2px solid rgb(210, 210, 210);
-            border-left: 2px solid rgb(210, 210, 210);
+            border-left: $bor-sol;
             h3{
                 text-align: left;
                 padding: 1.5rem;

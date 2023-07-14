@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,400;0,500;1,400;1,700&family=Mr+Dafoe&family=Petit+Formal+Script&display=swap');
+
 h1{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Petit Formal Script', 'Times new roman';
   font-size: 2.5rem;
 }
 
@@ -12,12 +14,11 @@ h1{
   font-size: 1.5rem;
 }
 
-/*Tablet*/
 @media (min-width: 768px){
 
   h1{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 4rem;
+    font-size: 5rem;
+    padding: 3%;
   }
   .container-fluid{
     flex-direction: column;
@@ -26,8 +27,13 @@ h1{
   .navbar-nav{
     grid-template-columns: repeat(6,1fr);
     font-size: 1.5rem;
+
+    .nav-item .nav-link:hover{
+      transform: scale(1.1);
+    }
   }
-
-
+  
 }
+
+
 

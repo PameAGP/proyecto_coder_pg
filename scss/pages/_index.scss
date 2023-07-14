@@ -1,32 +1,43 @@
-$carr: rgb(156, 156, 156);
-$borde: 1px 1px 0 $carr, 1px -1px 0 $carr, -1px 1px 0 $carr, -1px -1px 0 $carr, 1px 0px 0 $carr, 0px 1px 0 $carr, -1px 0px 0 $carr, 0px -1px 0 $carr;
+
 
 .carousel-item img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-    overflow: hidden;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.carousel-caption {
+
+  a {
+    color: $capt;
+    text-shadow: $borde;
   }
 
-  .carousel-caption{
-    
-    a{
-      color: $capt;
-      text-shadow: $borde;
-    }
+  p {
+    color: $capt;
+    text-shadow: $borde;
 
-    p{
-      color: $capt;
-      text-shadow: $borde;
-
-    }
   }
+}
 
-  .sobre-nos-hora {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 2%;
-    padding-right: 2%;
+.sobre-nos-hora {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-top: $bor-sol;
+
+  h3 {
+    padding: 4%;
+  }
+}
+
+.ubi {
+  border-top: $bor-sol;
+
+  h2{
+    padding-bottom: 1%;
   }
 
   .mapa {
@@ -35,5 +46,16 @@ $borde: 1px 1px 0 $carr, 1px -1px 0 $carr, -1px 1px 0 $carr, -1px -1px 0 $carr, 
     object-fit: cover;
     padding: 0;
   }
+}
 
-  
+@media(min-width:576px) {
+
+  .sobre-nos-hora {
+    border: none;
+  }
+
+  .ubi{
+    border: none;
+  }
+
+}

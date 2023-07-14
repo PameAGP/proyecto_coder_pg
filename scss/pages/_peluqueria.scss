@@ -1,30 +1,75 @@
+
+
 .agenda {
     display: grid;
+    padding: 5%;
 
     div{
         padding: 2%;
     }
     &-2{
         padding: 3%;
+
     }
 
     &-3{
         padding: 3%;
+
+        h3{
+            text-align: left;
+        }
+
+        ul{
+            list-style:circle;
+        }
+
+        ul li{
+            text-align: left;
+        }
     }
 }
+
 
 @media(min-width:576px) {
 
     .agenda {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        
+        div{
+            text-align: left;
+            
+            input{
+                text-align: left;
+            }
 
-        &-title {
+        }
+
+        .check-sb {
+            text-align: center;
+        }
+
+        h3 {
             grid-column: span 2;
+            text-align: left;
+
         }
 
         &-boton {
             grid-column: span 2;
+        }
+
+        &-2 {
+            padding-top: 7%;
+
+            h3{
+                text-align: left;
+            }
+
+            p{
+                text-align: left;
+            }
+
         }
 
         div{
@@ -38,10 +83,15 @@
 @media(min-width:768px) {
     .pelu{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 60% 40%;
     }
+    .agenda{
+        border-right: $bor-sol;
 
-    .agenda-3{
-        grid-column: span 2;
+        &-3{
+            padding-top: 3%;
+            border-top: $bor-sol;
+            grid-column: span 2;
+        }
     }
 }
