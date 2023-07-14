@@ -25,7 +25,7 @@ h2 {
 }
 
 .btn {
-  background-color: black;
+  background: radial-gradient(grey, black);
   border-color: black;
   color: white;
 }
@@ -68,6 +68,7 @@ h1 {
   max-width: 300px;
   margin-top: 2%;
   margin-bottom: 2%;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.508);
 }
 .articulos .card-img-top {
   width: 100%;
@@ -92,7 +93,6 @@ h1 {
   overflow: hidden;
 }
 
-/*Tablet*/
 @media (min-width: 768px) {
   .articulos {
     display: grid;
@@ -119,10 +119,7 @@ footer h3 {
   font-size: 1rem;
 }
 footer p {
-  font-size: 0.8rem;
-}
-footer ul {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .footer {
@@ -139,17 +136,22 @@ footer ul {
 }
 .footer-info {
   padding: 1%;
-  align-self: center;
 }
 
 @media (min-width: 576px) {
   .footer-cont {
     grid-template-columns: 1fr 1fr;
   }
+  .footer-info {
+    align-self: center;
+  }
 }
 @media (min-width: 768px) {
   .footer-cont {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-info {
+    align-self: flex-start;
   }
 }
 .contacto {
@@ -159,6 +161,7 @@ footer ul {
 .contacto-seccion {
   display: flex;
   padding-bottom: 6%;
+  margin: 1%;
   flex-direction: column;
 }
 .contacto-mapa {
@@ -189,14 +192,18 @@ footer ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .contacto-seccion {
+    border-right: 2px solid rgb(210, 210, 210);
+    border-left: 2px solid rgb(210, 210, 210);
+  }
   .contacto-seccion h3 {
     text-align: left;
     padding: 1.5rem;
   }
   .contacto-seccion div {
     text-align: left;
-    padding-left: 1.5rem;
-    padding-right: 1.5 rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5 rem;
   }
   .contacto-seccion div p {
     text-align: left;
@@ -212,6 +219,7 @@ footer ul {
   }
   .contacto-mapa {
     overflow: hidden;
+    padding-right: 0.5rem;
   }
 }
 .carousel-item img {
@@ -223,6 +231,11 @@ footer ul {
 
 .carousel-caption a {
   color: white;
+  text-shadow: 1px 1px 0 rgb(156, 156, 156), 1px -1px 0 rgb(156, 156, 156), -1px 1px 0 rgb(156, 156, 156), -1px -1px 0 rgb(156, 156, 156), 1px 0px 0 rgb(156, 156, 156), 0px 1px 0 rgb(156, 156, 156), -1px 0px 0 rgb(156, 156, 156), 0px -1px 0 rgb(156, 156, 156);
+}
+.carousel-caption p {
+  color: white;
+  text-shadow: 1px 1px 0 rgb(156, 156, 156), 1px -1px 0 rgb(156, 156, 156), -1px 1px 0 rgb(156, 156, 156), -1px -1px 0 rgb(156, 156, 156), 1px 0px 0 rgb(156, 156, 156), 0px 1px 0 rgb(156, 156, 156), -1px 0px 0 rgb(156, 156, 156), 0px -1px 0 rgb(156, 156, 156);
 }
 
 .sobre-nos-hora {

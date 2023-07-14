@@ -1,3 +1,4 @@
+
 .contacto {
     display: flex;
     flex-direction: column;
@@ -5,7 +6,9 @@
     &-seccion {
         display: flex;
         padding-bottom: 6%;
+        margin: 1%;
         flex-direction: column;
+
 
     }
 
@@ -45,14 +48,17 @@
         grid-template-columns: 1fr 1fr;
         
         &-seccion {
+
+            border-right: 2px solid rgb(210, 210, 210);
+            border-left: 2px solid rgb(210, 210, 210);
             h3{
                 text-align: left;
                 padding: 1.5rem;
             }
             div {
                 text-align: left;
-                padding-left: 1.5rem;
-                padding-right: 1.5 rem;
+                padding-left: 0.5rem;
+                padding-right: 0.5 rem;
     
                 p {
                     text-align: left;
@@ -72,6 +78,7 @@
 
         &-mapa {
             overflow: hidden;
+            padding-right: 0.5rem;
         }
     }
 

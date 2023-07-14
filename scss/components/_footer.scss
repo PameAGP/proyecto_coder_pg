@@ -1,7 +1,9 @@
+
+
 footer{
   a {
 
-    color: white;
+    color: $capt;
   }
 
   h3 {
@@ -9,21 +11,18 @@ footer{
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
-  ul {
-    font-size: 0.8rem;
-  }
 }
   
   .footer{
-      background-color: black;
+      background-color: $fhcb;
       width: 100%;
 
     &-cont {
-      background-color: black;
-      color: white;
+      background-color: $fhcb;
+      color: $capt;
       display: grid;
       height: 40%;
       width: 100%;
@@ -32,20 +31,36 @@ footer{
 
     &-info {
       padding: 1%;
-      align-self: center;
     }
   }
   
 
   @media (min-width: 576px){
-    .footer-cont{
-      grid-template-columns: 1fr 1fr;
+
+    .footer{
+
+      &-cont{
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &-info{
+        align-self: center;
+      }
     }
+
   }
 
   @media(min-width: 768px){
-    .footer-cont{
+    
+    .footer{
+
+      &-cont{
         grid-template-columns: repeat(4, 1fr);
       }
+
+      &-info{
+        align-self:flex-start;
+      }
+    }
   }
 
