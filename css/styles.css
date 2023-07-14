@@ -20,7 +20,14 @@ a {
   background-color: rgb(240, 240, 240);
 }
 
+h1 {
+  font-size: 2rem;
+  padding: 2rem;
+  margin: 0;
+}
+
 h2 {
+  font-size: 2rem;
   padding: 2rem;
   margin: 0;
 }
@@ -35,7 +42,17 @@ h2 {
   background: radial-gradient(black, grey);
 }
 
-h1 {
+.invisible {
+  clip: rect(0 0 0 0);
+  border: 0;
+  clip-path: inset(50%);
+  display: block;
+  margin: 0 -1px -1px 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.navbar-brand {
   font-family: "Petit Formal Script", "Times new roman";
   font-size: 2.5rem;
 }
@@ -49,9 +66,9 @@ h1 {
 }
 
 @media (min-width: 768px) {
-  h1 {
-    font-size: 5rem;
-    padding: 3%;
+  .navbar-brand {
+    font-size: 4rem;
+    padding: 2%;
   }
   .container-fluid {
     flex-direction: column;
@@ -109,7 +126,6 @@ h1 {
     gap: 1%;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    padding-top: 3%;
   }
   .card {
     align-items: center;
@@ -260,7 +276,7 @@ footer p {
 }
 
 .sobre-nos-hora {
-  padding-top: 5%;
+  padding-top: 2;
   padding-bottom: 5%;
   padding-left: 2%;
   padding-right: 2%;
@@ -272,9 +288,6 @@ footer p {
 
 .ubi {
   border-top: solid 1px rgb(188, 188, 188);
-}
-.ubi h2 {
-  padding-bottom: 1%;
 }
 .ubi .mapa {
   height: 50vh;

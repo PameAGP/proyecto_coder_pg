@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script&family=Great+Vibes&family=Montserrat:ital,wght@0,100;0,400;0,500;1,400;1,700&family=Mr+Dafoe&family=Petit+Formal+Script&display=swap');
 
-h1{
+.navbar-brand{
   font-family: 'Petit Formal Script', 'Times new roman';
   font-size: 2.5rem;
 }
@@ -16,9 +16,9 @@ h1{
 
 @media (min-width: 768px){
 
-  h1{
-    font-size: 5rem;
-    padding: 3%;
+  .navbar-brand{
+    font-size: 4rem;
+    padding: 2%;
   }
   .container-fluid{
     flex-direction: column;

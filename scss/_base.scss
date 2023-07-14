@@ -19,7 +19,14 @@ a {
   background-color: rgb(240, 240, 240);
 }
 
-h2 {
+h1 {
+  font-size: 2rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+h2{
+  font-size: 2rem;
   padding: 2rem;
   margin: 0;
 }
@@ -32,6 +39,16 @@ h2 {
 
 .btn:hover {
   background: radial-gradient(black, grey);
+}
+
+.invisible{
+  clip: rect(0 0 0 0);
+  border: 0;
+  clip-path: inset(50%);
+  display: block;
+  margin: 0 -1px -1px 0;
+  overflow: hidden;
+  position: absolute;
 }
 
 $capt: white;
