@@ -4,7 +4,6 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  padding-bottom: 2rem;
 
   .card {
     width: 90%;
@@ -51,9 +50,9 @@
   .articulos {
     display: grid;
     gap: 1%;
-    grid-template-columns: 1fr 1fr;
+    padding-bottom: 10%;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    padding-bottom: 5%;
   }
 
   .card{
@@ -62,6 +61,7 @@
     justify-content: center;
     justify-items: center;
     justify-self: center;
+    max-height: 400px;
 
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
@@ -81,7 +81,15 @@
 
 @media (min-width: 992px) {
   .articulos {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-inicio{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card{
+    max-height: 500px;
   }
 
 }

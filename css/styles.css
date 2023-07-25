@@ -21,15 +21,19 @@ a {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 2rem;
   margin: 0;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   padding: 1.5rem;
   margin: 0;
+}
+
+h3 {
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -91,13 +95,15 @@ h2 {
   .offcanvas {
     max-width: none;
   }
+  .sticky-top {
+    position: static;
+  }
 }
 .articulos {
   display: flex;
   align-items: center;
   width: 100%;
   flex-direction: column;
-  padding-bottom: 2rem;
 }
 .articulos .card {
   width: 90%;
@@ -135,9 +141,9 @@ h2 {
   .articulos {
     display: grid;
     gap: 1%;
-    grid-template-columns: 1fr 1fr;
+    padding-bottom: 10%;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    padding-bottom: 5%;
   }
   .card {
     align-items: center;
@@ -145,6 +151,7 @@ h2 {
     justify-content: center;
     justify-items: center;
     justify-self: center;
+    max-height: 400px;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
   }
@@ -159,7 +166,13 @@ h2 {
 }
 @media (min-width: 992px) {
   .articulos {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .articulos-inicio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    max-height: 500px;
   }
 }
 footer a {
@@ -186,6 +199,20 @@ footer p {
 }
 .footer-info {
   padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.redes-sociales {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.redes-sociales a img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: scale-down;
 }
 
 @media (min-width: 576px) {
@@ -194,6 +221,16 @@ footer p {
   }
   .footer-info {
     align-self: center;
+  }
+  .redes-sociales {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 120px;
+    gap: none;
+  }
+  .redes-sociales a img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: scale-down;
   }
 }
 @media (min-width: 768px) {
@@ -273,7 +310,7 @@ footer p {
 }
 .carousel-item img {
   width: 100%;
-  max-height: 347px;
+  max-height: 450px;
   object-fit: cover;
   overflow: hidden;
 }
@@ -319,6 +356,11 @@ footer p {
   }
   .ubi {
     border: none;
+  }
+}
+@media (max-width: 576px) {
+  .carousel-caption p {
+    display: none;
   }
 }
 .agenda {
