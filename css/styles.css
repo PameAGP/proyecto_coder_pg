@@ -168,8 +168,9 @@ h3 {
   .articulos {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  .articulos-inicio {
+  .articulos-ini_extra {
     grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 0;
   }
   .card {
     max-height: 500px;

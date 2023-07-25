@@ -83,8 +83,9 @@
   .articulos {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    &-inicio{
+    &-ini_extra{
       grid-template-columns: repeat(3, 1fr);
+      padding-bottom: 0;
     }
   }
 
