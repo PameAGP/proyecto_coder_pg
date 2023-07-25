@@ -59,6 +59,9 @@ h3 {
 .texto-justificado {
   text-align: justify;
 }
+.texto-left {
+  text-align: left;
+}
 
 .navbar-brand {
   font-family: "Petit Formal Script", "Times new roman";
