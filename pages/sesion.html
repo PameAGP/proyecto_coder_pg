@@ -63,38 +63,45 @@
 
   <main>
 
-    <h1 class="container bac-color">Agenda</h1>
+    <h1 class="container bac-color">Registro de usuario</h1>
 
     <section class="pelu container bac-color">
 
       <form class="bac-color agenda" action="">
 
-        <h3 class="agenda-title">Agenda online</h3>
+        <h3 class="agenda-title">Nuevo usuario</h3>
 
         <div>
-          <label for="">Día</label> <br>
+          <label for="usuario">Nombre de usuario: </label> <br>
+          <input type="name" id="usuario" placeholder="Ej: Pepe123">
+        </div>
+
+        <div>
+          <label for="nombreUsuario">Nombre: </label> <br>
+          <input type="name" id="nombreUsuario" placeholder="Ej: José">
+        </div>
+
+        <div>
+          <label for="apellidoUsuario">Apellido: </label> <br>
+          <input type="lastname" id="apellidoUsuario" placeholder="Ej: López">
+        </div>
+        
+
+        <div>
+          <label for="">Fecha de nacimiento</label> <br>
           <input type="date">
         </div>
 
         <div>
-          <label for="horarios_disp">Horario</label> <br>
-          <input type="time">
-        </div>
-
-        <div>
-          <label for="peluquero">Peluquero: </label> <br>
-          <select name="" id="peluquero">
-            <option value="roberto_G">Roberto Gomez</option>
-            <option value="Nicolas_P">Nicolás Perez</option>
-            <option value="Pedro_G">Pedro González</option>
-            <option value="ningun_p">Cualquier peluquero</option>
+          <label for="genero">Género </label> <br>
+          <select name="" id="genero">
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+            <option value="masc-feme">No es relevante</option>
           </select>
         </div>
 
-        <div>
-          <label for="nom_apell">Nombre y apellido: </label> <br>
-          <input type="name" id="nom_apell" placeholder="Ejemplo Ejemplalez">
-        </div>
+
 
         <div>
           <label for="email">Email:</label> <br>
@@ -102,7 +109,7 @@
         </div>
 
         <div class="check-sb">
-          <label for="barba_solo">Solo barba: </label>
+          <label for="barba_solo">Quiero resibir promos en mi mail. </label>
           <input type="checkbox" id="barba_solo" value="Solo barba, sin corte">
         </div>
 
@@ -113,31 +120,13 @@
       </form>
 
       <section class="agenda-2">
-        <h3> Agenda telefónica </h3>
+        <h3> ¿Por qué registrarme? </h3>
         <p>
           <br>
-          Podés enviar un mensaje por wpp o llamar. <br>
+          Los usuarios registrados reciben descuentos de IVA en productos, además de descuentos en promociones especiales. <br>
           <br>
-          Tel: 23200000 <br>
-          Cel: 093493343
 
         </p>
-      </section>
-
-      <section class="agenda-3">
-
-        <h3>¿Por qué sacar cita?</h3>
-        <ul>
-          <li>Si una persona llega en el mismo horario que vos, vas a teber prioridad por tu cita.</li>
-          <li>Sin cita deberás esperar a ser atendido por orden de llegada.</li>
-        </ul>
-        <h3>Recuerda que:</h3>
-        <ul>
-          <li>Si llegás tarde se espera un máximo de 10 minutos.</li>
-          <li>La reserva no es reembolsable</li>
-          <li>Al llegar tarde se tendrá en cuenta solo horario de llegada.</li>
-        </ul>
-
       </section>
 
 

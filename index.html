@@ -18,19 +18,14 @@
   <header class="sticky-top">
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">
-          <!-- Aquí debería ir el nombre de la peluquería, como generico dice solo "Peluquería"-->
-          Peluquería
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="./index.html">Fister Lewis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel">
-          <div class="offcanvas-header bg-black">
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body bg-black">
             <ul class="navbar-nav flex-grow-1 pe-3">
@@ -38,21 +33,34 @@
                 <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/agenda.html">Sacar cita</a>
+                <a class="nav-link" href="./pages/productos.html">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/productos.html">Productos</a>
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/contacto.html">Contacto</a>
+                <a class="nav-link" href="./pages/sob_nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/sob_nosotros.html">Sobre nosotros</a>
+                <a class="nav-link" href="./pages/extras.html">Extras</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./pages/extras.html">Extras</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Usuario
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Inicio de Sesión</a></li>
+                  <li><a class="dropdown-item" href="./pages/sesion.html">Registrarme</a></li>
+                </ul>
               </li>
+              <!-- <li class="nav-item busqueda">
+                <form class="d-flex mt-3" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </li> -->
             </ul>
+            
           </div>
         </div>
       </div>
@@ -62,7 +70,7 @@
 
 
   <main>
-
+    
     <h1 class="invisible">(Nombre de Peluquería) </h1>
     <!--  2. Promociones luego de Header  -->
     <section class="container bac-color">
