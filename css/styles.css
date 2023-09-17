@@ -114,12 +114,6 @@ h3 {
   .sticky-top {
     position: static;
   }
-  .busqueda {
-    grid-column: span 6;
-    width: 50vw;
-    max-width: 500px;
-    justify-self: center;
-  }
   .dropdown-menu {
     padding: 1rem;
     color: white;
@@ -155,6 +149,11 @@ h3 {
   object-fit: cover;
   overflow: hidden;
   text-align: justify;
+}
+.articulos .card-text-producto {
+  height: 1.5rem;
+  text-align: center;
+  font-weight: 600;
 }
 .articulos .card-title {
   height: 4rem;
@@ -475,6 +474,41 @@ footer p {
 .articulos-extras {
   padding-top: 1rem;
   padding-bottom: 2rem;
+}
+
+.filtros {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.filtros div {
+  text-align: left;
+}
+
+.busqueda-carrito {
+  width: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.busqueda {
+  margin: 0;
+  padding: 1rem;
+  grid-column: span 5;
+}
+
+.carrito {
+  padding: 0;
+  align-self: center;
+  padding: 0.5rem;
+  height: 100%;
+}
+.carrito .btn {
+  height: 90%;
+  width: 30%;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./css/styles.css">
   <meta name="description"
     content="Descubre una experiencia excepcional en nuestra reconocida peluquería en el centro de Montevideo. Con años de experiencia y peluqueros profesionales.">
-  <title>Peluquería | Peluquería para dama y caballero con o sin cita</title>
+  <title>Peluquería | Peluquería para dama y caballero sin cita</title>
 </head>
 
 <body bac-color>
@@ -53,13 +53,13 @@
                 <ul class="dropdown-menu bg-black ">
                   <li>
                     <label class="dropdown-item negrita texto-blanco" for="">Iniciar de Sesión: <br></label>
-                    <!-- <a class="dropdown-item" href="#">Inicio de Sesión: <br></a> -->
-                    <div><label for="usuario">Nombre de usuario: </label> <br>
+                    <div><label class="texto-blanco" for="usuario">Nombre de usuario: </label> <br>
                       <input type="name" id="usuario" placeholder="Ej: Pepe123"> <br>
-                      <label for="usuario">Contraseña: </label> <br>
+                      <label class='texto-blanco' for="usuario">Contraseña: </label> <br>
                       <input type="password" id="pass" placeholder="12345">
                       <input type="submit" value="Enviar" class="btn btn-primary btn-sesion">
-                    </div><hr>
+                    </div>
+                    <hr>
                   </li>
                   <li><a class="dropdown-item negrita texto-blanco" href="./pages/sesion.html">Registrarme</a></li>
                 </ul>
@@ -99,55 +99,8 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
             aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/promo_1.jpg" class="d-block w-100" alt="Promoción de cortes número 1, cortes en tendencia">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 1</h5>
-              </a>
-              <p>¡Cortes en tendencia a tu elección con un descuento increíble!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/promo_2.jpg" class="d-block w-100" alt="Promoción de cortes numero 2, 3 opciones">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 2</h5>
-              </a>
-              <p>Tres tipos de corte en promoción para ti.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/promo_3.jpg" class="d-block w-100"
-              alt="Promoción de cortes numero 3, tramiento a cabellos largos">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 3</h5>
-              </a>
-              <p>Tratamientos para el cabello, largo o corto.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/promo_4.jpg" class="d-block w-100"
-              alt="Promoción de cortes numero 4, tintura a cabellos largos">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 4</h5>
-              </a>
-              <p>Especial tintura para cabellos largos.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/promo_5.jpg" class="d-block w-100"
-              alt="Promoción de cortes numero 5, tintura a cabellos largos">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 5</h5>
-              </a>
-              <p>Cortes para cabello largo en promocón, ¡Animate a un cambio!</p>
-            </div>
-          </div>
+        <div id="carrusel" class="carousel-inner">
+          <!-- div con imagenes de carrusel aquí -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev">
@@ -168,51 +121,10 @@
 
     <section class="container bac-color">
       <h2 class="container bac-color">Productos destacados</h2>
-      <section class="articulos articulos-ini_extra">
+      <section id="destacados" class="articulos articulos-ini_extra">
 
-        <div class="card">
-          <img
-            src="https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/3/0/30335_10_1.jpg"
-            class="card-img-top" alt="Crema de peinar Pantene">
-          <div class="card-body">
-            <h5 class="card-title">Crema de peinar Pantene</h5>
-            <p class="card-text">La crema de peinar Rizos Definidos de Pantene cuenta con el poder de la exclusiva
-              fórmula Pro-V de Pantene y su nuevo envase te permite encontrar fácilmente el producto ideal para tu tipo
-              de cabello.</p>
-            <a href="https://tienda.farmashop.com.uy/cuidado-personal/cuidado-capilar/cremas-para-peinar/pantene-crema-peinar-r-definidos-300-ml.html"
-              target="_blank" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_829015-MLU41018740930_032020-F.webp" class="card-img-top"
-            alt="Cera pelo y barba capilatis">
-          <div class="card-body">
-            <h5 class="card-title">Cera Pelo & Barba Capilatis Hombre</h5>
-            <p class="card-text">Barba perfecta e impecable: cera de modelado para dar forma a distintos tipos de barba.
-              Hidrata, suaviza y define los contornos manteniendo un aspecto natural. Ofrece fijación y estilo,
-              minimizando el encrespamiento en barbas rebeldes. Peinados de larga duración: apta para todo tipo de
-              cabellos, permite definir peinados con precisión y sostener estilos únicos con total control.
-              Especialmente útil para hombres que desean pelo & barba imponentes, alineados y sin frizz.
-            </p>
-            <a href="https://articulo.mercadolibre.com.uy/MLU-459816751-cera-pelo-barba-capilatis-hombre-55-ml-_JM#position=35&search_layout=stack&type=item&tracking_id=81417e40-0beb-4311-93ea-e8397c2727df"
-              target="_blank" class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/8/7/87959_001.jpg"
-            class="card-img-top" alt="Cera gel promicia efecto mojado">
-          <div class="card-body">
-            <h5 class="card-title">Gel Primicia Modelador Efecto Mojado</h5>
-            <p class="card-text">¡Nada más atractivo que lucir un peinado impecable y único! Gel modelador para cabello
-              Primicia con fijación media para dar un efecto mojado y un brillo intenso.</p>
-            <a href="https://tienda.farmashop.com.uy/primicia-cera-gel-flexible-130-gr.html" target="_blank"
-              class="btn btn-primary">Comprar</a>
-          </div>
-        </div>
-
+        <!-- Aquí destacados  -->
+        
       </section>
 
     </section>
@@ -304,6 +216,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/codigo.js"></script>
 
 </body>
 
