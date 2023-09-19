@@ -482,6 +482,7 @@ footer p {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: flex-start;
+  height: 100%;
 }
 .filtros div {
   text-align: left;
@@ -509,6 +510,50 @@ footer p {
 .carrito .btn {
   height: 90%;
   width: 30%;
+}
+
+.carritoCuerpo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardCarrito {
+  width: 90%;
+  max-height: 50%;
+  margin: 3%;
+  padding: 3%;
+}
+.cardCarrito .card-img-top {
+  height: 50%;
+  width: 50%;
+  object-fit: scale-down;
+  margin: 2%;
+}
+.cardCarrito .card-body {
+  height: 50%;
+  width: 90%;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+.cardCarrito .card-body .card-input {
+  width: 100%;
+  height: 80%;
+}
+.cardCarrito .card-body .card-title {
+  grid-column: span 2;
+}
+.cardCarrito .card-body .btn {
+  width: 100%;
+  margin: 4%;
+}
+
+.cardCarrito:hover {
+  box-shadow: none;
+  border-top: none;
+  transform: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

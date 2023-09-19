@@ -87,15 +87,6 @@ for (const carrusel of promociones) {
     `;
 }
 
-
-
-const productosDestacados = [
-    { id: 1, nombre: 'Crema de peinar Pantene', imagen: 'https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/3/0/30335_10_1.jpg', precio: 290, descripcion: 'La crema de peinar Rizos Definidos de Pantene cuenta con el poder de la exclusiva fórmula Pro-V de Pantene y su nuevo envase te permite encontrar fácilmente el producto ideal para tu tipo de cabello.' },
-    { id: 2, nombre: 'Cera pelo y barba capilatis', imagen: 'https://http2.mlstatic.com/D_NQ_NP_2X_829015-MLU41018740930_032020-F.webp', precio: 506, descripcion: 'Barba perfecta e impecable: cera de modelado para dar forma a distintos tipos de barba. Hidrata, suaviza y define los contornos manteniendo un aspecto natural. Ofrece fijación y estilo, minimizando el encrespamiento en barbas rebeldes. Peinados de larga duración: apta para todo tipo de cabellos, permite definir peinados con precisión y sostener estilos únicos con total control. Especialmente útil para hombres que desean pelo & barba imponentes, alineados y sin frizz.' },
-    { id: 3, nombre: 'Cera gel promicia efecto mojado', imagen: 'https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/8/7/87959_001.jpg', precio: 450, descripcion: '¡Nada más atractivo que lucir un peinado impecable y único! Gel modelador para cabello. Primicia con fijación media para dar un efecto mojado y un brillo intenso.' },
-];
-
-
 console.table(productosDestacados);
 
 let destacados = document.getElementById('destacados');
@@ -103,13 +94,14 @@ let destacados = document.getElementById('destacados');
 for (const producto of productosDestacados) {
     destacados.innerHTML += `
         <div class="card">
-          <img src=${producto.imagen} class="card-img-top" alt=${producto.nombre}>
+          <img src=${producto.imagenProducto} class="card-img-top" alt=${producto.nombreProducto}>
           <div class="card-body">
-            <h5 class="card-title">$ ${producto.precio}<br>${producto.nombre}</h5>
+            <h5 class="card-title">$ ${producto.precio}<br>${producto.nombreProducto}</h5>
             <p class="card-text">${producto.descripcion}</p>
             <a href="./pages/productos.html"
               target="" class="btn btn-primary">Comprar</a>
           </div>
         </div>
-    `;
+    `; 
 }
+

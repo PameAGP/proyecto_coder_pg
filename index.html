@@ -52,24 +52,21 @@
                 </a>
                 <ul class="dropdown-menu bg-black ">
                   <li>
-                    <label class="dropdown-item negrita texto-blanco" for="">Iniciar de Sesión: <br></label>
-                    <div><label class="texto-blanco" for="usuario">Nombre de usuario: </label> <br>
-                      <input type="name" id="usuario" placeholder="Ej: Pepe123"> <br>
-                      <label class='texto-blanco' for="usuario">Contraseña: </label> <br>
-                      <input type="password" id="pass" placeholder="12345">
-                      <input type="submit" value="Enviar" class="btn btn-primary btn-sesion">
-                    </div>
+                    <label class="negrita texto-blanco" for="">Iniciar de Sesión: <br></label>
+                    <form id="inicioSesion">
+                      <label class="texto-blanco" for="usuario">Nombre de usuario: 
+                        <input type="user" id="usuario" placeholder="Ej: Pepe123">
+                      </label>
+                      <label class='texto-blanco' for="usuario">Contraseña: 
+                        <input type="password" id="pass" placeholder="123456">
+                      </label> <br>
+                      <input type="submit" value="enviar" class="btn btn-primary btn-sesion">
+                    </form>
                     <hr>
                   </li>
                   <li><a class="dropdown-item negrita texto-blanco" href="./pages/sesion.html">Registrarme</a></li>
                 </ul>
               </li>
-              <!-- <li class="nav-item busqueda">
-                <form class="d-flex mt-3" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </li> -->
             </ul>
 
           </div>
@@ -124,7 +121,7 @@
       <section id="destacados" class="articulos articulos-ini_extra">
 
         <!-- Aquí destacados  -->
-        
+
       </section>
 
     </section>
@@ -216,8 +213,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-  <script src="./js/index.js"></script>
   <script src="./js/codigo.js"></script>
+  <script src="./js/index.js"></script>
+
 
 </body>
 
