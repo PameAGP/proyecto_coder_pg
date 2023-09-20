@@ -75,7 +75,7 @@
   <!-- ---------------------MAIN-------------------------- -->
   <main>
     <!-- Boton prueba -->
-    <!-- <button id="botonPrueba" class="btn">PRUEBA</button> -->
+    <!-- <button id="botonPrueba" class="btn" onclick= "location.reload()" >PRUEBA</button> -->
 
 
     <h1 class="container bac-color">Productos</h1>
@@ -88,26 +88,26 @@
       </form>
 
       <div class="carrito bac-color">
-
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg></button>
+        <button id="cargar-carrito" class=" btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"> 
+      <!-- Icono de carrito aqui -->
+      </button>
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div id="carrito" class="offcanvas-body carritoCuerpo">
-            <!-- Productos -->
-            <div id="totalCarro">
-              <!-- TOTAL -->
+          <div class="offcanvas-body carrito-cuerpo">
+
+            <div id="carrito" class="cardCarrito">
+                          <!-- Productos -->
             </div>
 
-            <div id="finalizarCarrito">
-              <button class="btn btn-primary">Finalizar Carrito</button>
+            <div id="finalizar-carrito">
+              
             </div>
+
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@
           <div class="check-sb">
 
             <label  class="texto-left" for="femenino">Dama</label>
-            <input id="dama" type="checkbox" id="femenino" value="">
+            <input id="dama" type="checkbox" id="femenino" value="" >
           </div>
           <div class="check-sb">
             <label class="texto-left" for="masculino">Caballero</label>
@@ -160,10 +160,7 @@
 
       </section>
 
-      <section id='carrito' class="container articulos">
-        <h4>Aqui destacados:</h4>
-        <!-- PRUEBA -->
-      </section>
+      
     </section>
 
   </main>

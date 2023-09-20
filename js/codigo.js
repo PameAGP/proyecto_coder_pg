@@ -223,7 +223,48 @@ productosDestacados.push(
   producto7
 )
 
-console.table(productosDestacados);
+class usuario {
+  constructor (
+    userName,
+    nombreUsuario,
+    apellidoUsuario,
+    passUsuario,
+    fechaNacimiento,
+    genero,
+    email,
+    promo,
+    info
+  ){
+    this.userName = userName;
+    this.nombreUsuario = nombreUsuario;
+    this.apellidoUsuario = apellidoUsuario;
+    this.passUsuario = passUsuario;
+    this.fechaNacimiento = fechaNacimiento;
+    this.genero = genero;
+    this.email = email;
+    this.promo = promo;
+    this.info = info;
+  }
+}
+
+const usuarios = [];
+
+const usuario1 = new usuario (
+  'Pepe123',
+  'José',
+  'Gomez',
+  12345,
+  '15/4/95',
+  'masculino',
+  'pepeelgroso123@hotmail.com',
+  true,
+  true
+);
+
+usuarios.push(usuario1);
+
+console.log (usuarios);
+// console.table(productosDestacados);
 
 // // ----------------Validaciones---------------------
 
