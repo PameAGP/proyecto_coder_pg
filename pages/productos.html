@@ -117,19 +117,23 @@
 
     <section class="container bac-color">
 
-      <section id='tarjetasProductos' class="articulos">
-
+      <section>
         <div class="filtros">
           <h5>Buscar por filtros:</h5>
           <h6>Categoría:</h6>
+<!-- 
+          <input type="checkbox" id="miElementoCheckbox"> -->
+
+          <!-- <div id="msg"></div> -->
+
           <div class="check-sb">
 
             <label  class="texto-left" for="femenino">Dama</label>
-            <input id="dama" type="checkbox" id="femenino" value="" >
+            <input id="dama" type="checkbox">
           </div>
           <div class="check-sb">
             <label class="texto-left" for="masculino">Caballero</label>
-            <input type="checkbox" id="femenino" value="">
+            <input id="caballero" type="checkbox">
           </div>
           <div class="check-sb">
             <label class="texto-left" for="barba">Solo Barba</label>
@@ -155,6 +159,11 @@
             <input type="number" id="precioMinimo" placeholder="Ej: 800">
           </div>
         </div>
+      </section>
+
+      <section id='tarjetasProductos' class="articulos">
+
+        
 
         <!-- Aquí las tarjetas de los productos -->
 

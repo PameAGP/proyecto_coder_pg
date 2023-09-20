@@ -11,6 +11,7 @@ const sectionProductos = document.getElementById('tarjetasProductos');
 
 
 function mostrarProductos(listadoProductos) {
+  sectionProductos.innerHTML='';
   for (const product of listadoProductos) {
     sectionProductos.innerHTML += `
         <div class="card" >
@@ -164,28 +165,7 @@ function listaFemenino() {
     const filtrados = inventario.filter((producto) => producto.femenino == feme);
     console.table(filtrados);
 
-    const femenino = document.getElementsByClassName('femenino');
-
-    function mostraFemeninos(listadoFeme) {
-      for (const product of listadoFeme) {
-        femenino.innerHTML = `
-          <div class="card" >
-        <img src=${product.imagenProducto} class="card-img-top" alt=${product.nombreProducto}>
-        <div class="card-body">
-          <h5 class="card-title">${product.nombreProducto}</h5>
-          <p class="card-text card-text-producto">$ ${product.precio}</p>
-          <button id=${product.id} class="btn btn-primary alCarrito">Comprar</button>
-        </div>
-      </div>
-          `;
-
-      }
-    }
-
-    mostraFemeninos(filtrados);
-    console.table(filtrados);
-
-
+    mostrarProductos(filtrados);
   }
 
   productoFemenino(true);
@@ -194,12 +174,55 @@ function listaFemenino() {
 }
 
 
-let check = document.getElementById('dama');
+var checkF = document.getElementById('dama');
 
-check.addEventListener('click', listaFemenino);
+checkF.addEventListener('click', function(){
+if(checkF.checked){
+  sectionProductos.innerHTML += '';
+  listaFemenino();
+}else{
+
+  mostrarProductos(inventario);
+}
+});
 
 
+// function listarMasculino() {
+
+//   function productoFemenino(feme) {
+//     const filtrados = inventario.filter((producto) => producto.masculino== feme);
+//     console.table(filtrados);
+
+//     mostrarProductos(filtrados);
+//   }
+
+//   productoFemenino(true);
 
 
+// }
+
+// var checkM = document.getElementById('caballero');
+
+// checkM.addEventListener('click', function (){
+//   if(checkF.checked){
+//     sectionProductos.innerHTML += '';
+//     listarMasculino();
+//   }else{
+  
+//     mostrarProductos(inventario);
+//   }
+// });
 
 
+// var miCheckbox = document.getElementById('miElementoCheckbox');
+//   var msg = document.getElementById('msg');
+
+//   alert('El valor inicial del checkbox es ' + miCheckbox.checked);
+
+//   miCheckbox.addEventListener('click', function() {
+//     if(miCheckbox.checked) {
+//       msg.innerText = 'El elemento está marcado';
+//     } else {
+//       msg.innerText = 'Ahora está desmarcado';
+//     }
+//   });
