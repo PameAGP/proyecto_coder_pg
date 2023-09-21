@@ -82,10 +82,11 @@
 
     <section class = "container busqueda-carrito">
 
-      <form class="busqueda bac-color d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Ej: Cera" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      <section class="busqueda bac-color d-flex">
+        <!-- <input id="busqueda" class="form-control me-2" type="search" placeholder="Ej: Cera" aria-label="Search"> -->
+        <input class="form-control me-2" type="text" id="busqueda" placeholder="Ej: Algo">
+        <button id="buscar" class="btn btn-primary">Buscar</button>
+      </section>
 
       <div class="carrito bac-color">
         <button id="cargar-carrito" class=" btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -119,45 +120,53 @@
 
       <section>
         <div class="filtros">
-          <h5>Buscar por filtros:</h5>
-          <h6>Categoría:</h6>
-<!-- 
-          <input type="checkbox" id="miElementoCheckbox"> -->
-
-          <!-- <div id="msg"></div> -->
-
+          <h5 class="bpf-titulo">Buscar por filtros:</h5>
+          <div class="f-categoria">
+            <h6>Categoría:</h6>
+            <!-- 
+                      <input type="checkbox" id="miElementoCheckbox"> -->
+            
+                      <!-- <div id="msg"></div> -->
+            
+                      <div class="check-sb">
+            
+                        <label  class="texto-left" for="femenino">Dama</label>
+                        <input id="dama" type="checkbox">
+                      </div>
+                      <div class="check-sb">
+                        <label class="texto-left" for="masculino">Caballero</label>
+                        <input id="caballero" type="checkbox">
+                      </div>
+                      <div class="check-sb">
+                        <label class="texto-left" for="barba">Solo Barba</label>
+                        <input type="checkbox" id="barba">
+                      </div>
+                      <div class="check-sb">
+                        <label class="texto-left" for="cabello">Solo Cabello</label>
+                        <input type="checkbox" id="cabello">
+                      </div>
+          </div>
+          <div class="f-precio">
+            <h6>Filtrar por precio:</h6>
           <div class="check-sb">
-
-            <label  class="texto-left" for="femenino">Dama</label>
-            <input id="dama" type="checkbox">
+            <label class="texto-left" for="descendente">Mayor precio a menor</label>
+            <input type="checkbox" id="descendente" value="">
           </div>
           <div class="check-sb">
-            <label class="texto-left" for="masculino">Caballero</label>
-            <input id="caballero" type="checkbox">
-          </div>
-          <div class="check-sb">
-            <label class="texto-left" for="barba">Solo Barba</label>
-            <input type="checkbox" id="femenino" value="">
-          </div>
-          <div class="check-sb">
-            <label class="texto-left" for="barba">Solo Cabello</label>
-            <input type="checkbox" id="femenino" value="">
-          </div>
-          <h6>Filtrar por precio:</h6>
-          <div class="check-sb">
-            <label class="texto-left" for="desendente">Mayor precio a menor</label>
-            <input type="checkbox" id="femenino" value="">
-          </div>
-          <div class="check-sb">
-            <label class="texto-left" for="acendente">Menor precio a mayor</label>
-            <input type="checkbox" id="femenino" value="">
+            <label class="texto-left" for="ascendente">Menor precio a mayor</label>
+            <input type="checkbox" id="ascendente">
           </div>
           <div>
             <label for="">Desde </label>
-            <input type="number" id="precioMaximo" placeholder="Ej: 350"><br>
+            <input class="label-precio" type="number" id="precioMaximo" placeholder="Ej: 800">
             <label for="">hasta</label>
-            <input type="number" id="precioMinimo" placeholder="Ej: 800">
+            <input class="label-precio" type="number" id="precioMinimo" placeholder="Ej: 350">
+            <button id="b-elegidos-precios" class="btn btn-primary">Filtrar</button>
+            <button id="b-elegidos-volver" class="btn btn-primary">Limpiar</button>
           </div>
+          </div>
+          
+          
         </div>
       </section>
 
@@ -224,6 +233,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../js/codigo.js"></script>
   <script src="../js/productos.js"></script>
 

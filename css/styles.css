@@ -477,15 +477,30 @@ footer p {
 }
 
 .filtros {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
   height: 100%;
 }
 .filtros div {
   text-align: left;
+}
+
+.bpf-titulo {
+  grid-column: span 2;
+  height: 2rem;
+}
+
+.f-precio {
+  grid-row: span 3;
+}
+
+.f-categoria {
+  grid-row: span 3;
+}
+
+.label-precio {
+  width: 20%;
 }
 
 .busqueda-carrito {
