@@ -42,7 +42,8 @@ class producto {
     masculino,
     barba,
     cabello,
-    stock
+    stock,
+    cantidadEnCarrito
 
   ) {
     this.id = id;
@@ -56,6 +57,7 @@ class producto {
     this.barba = barba;
     this.cabello = cabello;
     this.stock = stock;
+    this.cantidadEnCarrito = cantidadEnCarrito;
   }
 
   descuentoCliente() {
@@ -78,7 +80,8 @@ const producto1 = new producto(
   true,
   false,
   true,
-  20
+  20,
+  1
 );
 const producto2 = new producto(
   2,
@@ -91,7 +94,8 @@ const producto2 = new producto(
   true,
   false,
   true,
-  6
+  6,
+  1
 );
 const producto3 = new producto(
   3,
@@ -104,7 +108,8 @@ const producto3 = new producto(
   true,
   true,
   true,
-  33
+  33,
+  1
 );
 const producto4 = new producto(
   4,
@@ -117,7 +122,8 @@ const producto4 = new producto(
   true,
   true,
   false,
-  5
+  5,
+  1
 );
 const producto5 = new producto(
   5,
@@ -130,7 +136,8 @@ const producto5 = new producto(
   true,
   false,
   true,
-  100
+  100,
+  1
 );
 const producto6 = new producto(
   6,
@@ -144,6 +151,7 @@ const producto6 = new producto(
   false,
   true,
   36,
+  1
 );
 const producto7 = new producto(
   7,
@@ -156,7 +164,8 @@ const producto7 = new producto(
   true,
   false,
   true,
-  40
+  40,
+  1
 );
 const producto8 = new producto(
   8,
@@ -169,7 +178,8 @@ const producto8 = new producto(
   true,
   false,
   true,
-  20
+  20,
+  1
 );
 const producto9 = new producto(
   9,
@@ -182,7 +192,8 @@ const producto9 = new producto(
   true,
   false,
   true,
-  8
+  8,
+  1
 );
 const producto10 = new producto(
   10,
@@ -195,7 +206,8 @@ const producto10 = new producto(
   true,
   false,
   true,
-  28
+  28,
+  1
 );
 
 console.log(producto1);
@@ -274,7 +286,7 @@ console.log (usuarios);
 // inputNombre.onkeyup = () => {
 //   if (inputNombre.value.length < 3) {
 //     inputNombre.style.color = 'red';
-//   }
+//   }x
 //   else {
 //     inputNombre.style.color = 'black';
 //   }
