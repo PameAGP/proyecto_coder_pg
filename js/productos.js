@@ -75,13 +75,11 @@ function finalizarCompra (){
 }
 
 // ---------------MOSTRAR CARRITO GUARDADO 🛒💾🛒---------------
+
 const carritoMuestra = document.getElementById('carrito');
 
-
-
-
 function carritoMostrar(listaCarrito) {
-
+  carritoMuestra.innerHTML='';
   for (const product of listaCarrito) {
 
     carritoMuestra.innerHTML += `
@@ -94,7 +92,7 @@ function carritoMostrar(listaCarrito) {
                 </div>
               </div>
     `;
-
+ 
   }
 
   const total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito , 0);
@@ -110,7 +108,7 @@ function carritoMostrar(listaCarrito) {
 
       carritoMuestra.innerHTML=''; 
 
-      console.log('Se eliminará: ' + boton.id)
+      console.log('Se eliminó: ' + boton.id)
 
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
 
@@ -171,60 +169,26 @@ function mostrarProductos(listadoProductos) {
 mostrarProductos(inventario);
 
 
-// ---------------MOSTRAR CARRO QUE SE VA SELECCIONANDO 🛒---------------
+// ---------------CARRO QUE SE VA SELECCIONANDO 🛒---------------
 function agregarAlCarrito(producto) {
+  
   const repetido = carro.some((prodRepetido) => prodRepetido.id === producto.id);
-
-  console.log ('Hay repetido?' +repetido);
 
   if (repetido == true){ 
     carro.map((prod) => {
       if (prod.id === producto.id){
         prod.cantidadEnCarrito++;
-        console.log (prod.cantidadEnCarrito);
+        // console.log (prod.cantidadEnCarrito);
       }
     });
   } else {
     carro.push(producto);
     console.table(carro);
-
   }
 
-  carritoMuestra.innerHTML +=`
-  <div class="card cardCarrito">
-  <img src=${producto.imagenProducto} class="card-img-top" alt=${producto.nombreProducto}>
-  <div class="card-body">
-    <h5 class="card-title">${producto.nombreProducto}<br>$ ${producto.precio * producto.cantidadEnCarrito}</h5>
-    <input class="card-input" type="number" id="" placeholder=${producto.cantidadEnCarrito}>
-    <button id=${producto.id} class="btn btn-primary no-carrito" >Quitar</button>
-  </div>
-</div>
-  `;
-    
   saveLocal();
-  const total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito , 0);
-  console.log ('¿Estoy sumando? --->' +total);
-  document.getElementById('el-total').innerText = 'Total: $' +total;
-
-
-  let botonEliminar = document.getElementsByClassName('no-carrito');
-
-
-  for (const boton of botonEliminar) {
-    boton.addEventListener('click', () => {
-
-      carritoMuestra.innerHTML=''; 
-
-      console.log('Se eliminará: ' + boton.id)
-
-      const seleccionado = carro.find((producto) => producto.id == boton.id);
-
-
-      eliminaDeCarrito(seleccionado);
-
-
-    });
-  }
+  carritoMostrar(carro);
+   
 }
 
 
@@ -437,44 +401,3 @@ botonBuscar.addEventListener('click', () => {
 
 });
 
-
-              
-// function listarMasculino() {
-
-//   function productoFemenino(feme) {
-//     const filtrados = inventario.filter((producto) => producto.masculino== feme);
-//     console.table(filtrados);
-
-//     mostrarProductos(filtrados);
-//   }
-
-//   productoFemenino(true);
-
-
-// }
-
-// var checkM = document.getElementById('caballero');
-
-// checkM.addEventListener('click', function (){
-//   if(checkF.checked){
-//     sectionProductos.innerHTML += '';
-//     listarMasculino();
-//   }else{
-  
-//     mostrarProductos(inventario);
-//   }
-// });
-
-
-// var miCheckbox = document.getElementById('miElementoCheckbox');
-//   var msg = document.getElementById('msg');
-
-//   alert('El valor inicial del checkbox es ' + miCheckbox.checked);
-
-//   miCheckbox.addEventListener('click', function() {
-//     if(miCheckbox.checked) {
-//       msg.innerText = 'El elemento está marcado';
-//     } else {
-//       msg.innerText = 'Ahora está desmarcado';
-//     }
-//   });
