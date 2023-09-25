@@ -113,7 +113,7 @@ const producto3 = new producto(
 const producto4 = new producto(
   4,
   "Cera Gel Vikingo para Barba",
-  'https://i0.wp.com/odinuruguay.com/wp-content/uploads/2021/04/Cera-Gel-Vikingo.png?fit=1024%2C1024&ssl=1',
+  'https://http2.mlstatic.com/D_NQ_NP_678171-MLU45541628787_042021-O.webp',
   '',
   293,
   true,
@@ -209,6 +209,81 @@ const producto10 = new producto(
   1
 );
 
+const producto11 = new producto(
+  11,
+  'Aceite para Barba brillante y suave',
+  'https://http2.mlstatic.com/D_NQ_NP_2X_686641-MLU48054352893_102021-F.webp',
+  '',
+  359,
+  true,
+  false,
+  true,
+  true,
+  false,
+  20,
+  1
+);
+
+const producto12 = new producto(
+  12,
+  'Oleo para Braba Jhony Barber',
+  'https://http2.mlstatic.com/D_NQ_NP_2X_700713-MLU70079574267_062023-F.webp',
+  '',
+  490,
+  true,
+  false,
+  true,
+  true,
+  false,
+  12,
+  1
+);
+
+const producto13 = new producto(
+  13,
+  'Bálsamo y cepillo para Barba - Set',
+  'https://http2.mlstatic.com/D_NQ_NP_2X_746938-MLU52612611363_112022-F.webp',
+  '',
+  590,
+  true,
+  false,
+  true,
+  true,
+  false,
+  3,
+  1
+);
+
+const producto14 = new producto(
+14,
+'Shampoo para barba y bigote',
+'https://http2.mlstatic.com/D_NQ_NP_2X_763111-MLU32733123849_112019-F.webp',
+'',
+270,
+true,
+false,
+true,
+true,
+false,
+55,
+1
+);
+
+const producto15 = new producto (
+  15,
+  'Cera para el cabello en gel Barber Style',
+  'https://http2.mlstatic.com/D_NQ_NP_2X_610541-MLU48041981231_102021-F.webp',
+  '',
+  350,
+  true,
+  false,
+  true,
+  false,
+  true,
+  33,
+  1
+);
+
 console.log(producto1);
 
 const inventario = [];
@@ -223,8 +298,14 @@ inventario.push(
   producto7,
   producto8,
   producto9,
-  producto10
+  producto10,
+  producto11,
+  producto12,
+  producto13,
+  producto14,
+  producto15
 );
+
 
 const productosDestacados = [];
 
