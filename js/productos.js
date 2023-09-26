@@ -102,7 +102,6 @@ function carritoMostrar(listaCarrito) {
                 </div>
       `;
     }else{
-      console.log ('Cartel 2');
       carritoMuestra.innerHTML += `
       <div class="card cardCarrito">
                   <img src=${product.imagenProducto} class="card-img-top" alt=${product.nombreProducto}>
@@ -138,13 +137,10 @@ function carritoMostrar(listaCarrito) {
 
   for (const boton of botonEliminar) {
     boton.addEventListener('click', () => {
- 
-      carritoMuestra.innerHTML=''; 
 
       console.log('Se eliminó: ' + boton.id)
 
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
-
 
       eliminaDeCarrito(seleccionado);
 
@@ -155,8 +151,10 @@ function carritoMostrar(listaCarrito) {
       finalizarOvaciar();
       
       }
+      saveLocal();
 
     });
+
   }
 
   let botonUnoMenos = document.getElementsByClassName ('uno-menos');
@@ -200,7 +198,6 @@ function carritoMostrar(listaCarrito) {
 
       subeUnoDelCarrito(seleccionado);
 
-      pssm (seleccionado);
     });
   }
   
@@ -253,11 +250,31 @@ function subeUnoDelCarrito (producto){
   carritoMostrar (carro);
 }
 
+// --------------FUNCION ELIMINAR DE CARRITO ❌❌❌----------------
+const eliminaDeCarrito = (idEli) => {
+  
+  carritoMuestra.innerHTML='';
+  let busca = carro.indexOf(idEli);
+
+  while(idEli.cantidadEnCarrito > 1 ){
+    // console.log(idEli.cantidadEnCarrito);
+    idEli.cantidadEnCarrito --;
+
+  }
+
+  
+  if (busca != -1) {
+    carro.splice(busca, 1);
+    console.table(carro);
+    saveLocal();
+  }
+
+  carritoMostrar(carro);
+
+}
 
 // ---------------MOSTRAR PRODUCTOS EN PANTALLA 📺---------------
 const sectionProductos = document.getElementById('tarjetasProductos');
-
-
 
 function mostrarProductos(listadoProductos) {
   sectionProductos.innerHTML='';
@@ -312,7 +329,6 @@ function agregarAlCarrito(producto) {
       stock = prod.cantidadEnCarrito;
     }
   });
-  // console.log (stock);
 
   if (repetido == true && stock < producto.stock){    
     carro.map((prod) => {
@@ -344,29 +360,6 @@ function buscaStock (parametro){
   console.table(filtrados);
 }
 
-// --------------FUNCION ELIMINAR DE CARRITO ❌❌❌----------------
-
-const eliminaDeCarrito = (idEli) => {
-  
-  let busca = carro.indexOf(idEli);
-  carritoMuestra.innerHTML='';
-
-  if (busca != -1) {
-    carro.splice(busca, 1);
-    console.table(carro);
-  }
-  saveLocal();
-  carritoMostrar(carro);
-}
-
-// Prueba botón
-
-// let boton = document.getElementById('no-carrito-3');
-
-// // Ejemplo Funcion -------
-// // boton.addEventListener('click', dispararAlert);
-// // Funcion Flecha -----------
-// boton.addEventListener('click', ()=>{alert('CLICK ;)')});
 
 
 // ---------------LISTAR PRODUCTOS--------------
