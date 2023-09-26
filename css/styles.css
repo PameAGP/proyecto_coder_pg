@@ -520,10 +520,6 @@ footer p {
   grid-column: span 5;
 }
 
-.btn-quita {
-  background-color: red;
-}
-
 .carrito {
   padding: 0;
   align-self: center;
