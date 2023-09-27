@@ -50,7 +50,7 @@ function finalizarOvaciar (){
   finalCarrito.innerHTML = `
   <h6 id="el-total">''</h6>
   <button id="vaciar-carrito" class="btn btn-primary" onclick="location.reload()">Vaciar carrito</button>
-  <button id="finalizar-carro" class="btn btn-primary">Finalizar compra</button>
+  <button id="finalizar-carro" class="btn btn-primary" onclick="location.href='./finalDeCompra.html'">Finalizar compra</button>
   `;
   carritoIcono.innerHTML = `
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
@@ -62,8 +62,8 @@ function finalizarOvaciar (){
 
   let finalizarCarro = document.getElementById('finalizar-carro');
   finalizarCarro.addEventListener('click', () => {
-    deleteLocal();
-    finalizarCompra();
+    // deleteLocal();
+    // finalizarCompra();
   });
 }
 
@@ -551,3 +551,7 @@ botonBuscar.addEventListener('click', () => {
 
 });
 
+document.getElementById ('carrito-final').innerHTML =`
+<h6 id="el-total">''</h6>
+  <button id="vaciar-carrito" class="btn btn-primary" onclick="location.reload()">Vaciar carrito</button>
+  <button id="finalizar-carro" class="btn btn-primary" onclick="location.href='./finalDeCompra.html'">Finalizar compra</button>`;

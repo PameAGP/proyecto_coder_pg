@@ -7,5 +7,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@sweetalert2/theme-dark": "^5.0.15",
+    "sweetalert2": "^11.7.31"
+  }
 }
