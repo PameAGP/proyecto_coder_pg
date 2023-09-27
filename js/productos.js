@@ -49,7 +49,7 @@ function carritoVacio(){
 function finalizarOvaciar (){
   finalCarrito.innerHTML = `
   <h6 id="el-total">''</h6>
-  <button id="vaciar-carrito" class="btn btn-primary" >Vaciar carrito</button>
+  <button id="vaciar-carrito" class="btn btn-primary" onclick="location.reload()">Vaciar carrito</button>
   <button id="finalizar-carro" class="btn btn-primary">Finalizar compra</button>
   `;
   carritoIcono.innerHTML = `
