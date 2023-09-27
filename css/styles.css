@@ -532,15 +532,18 @@ footer p {
   min-width: 50px;
 }
 
-.carritoCuerpo {
+.carrito-cuerpo {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .cardCarrito {
-  width: 90%;
+  width: 100%;
+  max-width: 250px;
   margin: 3%;
   padding: 3%;
+  align-content: center;
 }
 .cardCarrito .card-img-top {
   max-height: 100px;
@@ -572,7 +575,7 @@ footer p {
   grid-column: span 2;
 }
 .cardCarrito .card-body .quita button {
-  width: 25px;
+  width: 35px;
 }
 .cardCarrito .card-body .quita label {
   width: 30px;
@@ -623,6 +626,22 @@ footer p {
   }
   .label-precio {
     width: 80%;
+  }
+  .final-carro {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2%;
+    justify-content: center;
+    padding-bottom: 5%;
+  }
+  .finalizar-carrito {
+    max-height: 150px;
+    width: 100%;
+  }
+  .finalizar-carrito button {
+    height: 100%;
+    width: 50%;
+    padding: 5%;
   }
 }
 
