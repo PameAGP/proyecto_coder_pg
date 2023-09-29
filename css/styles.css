@@ -393,62 +393,87 @@ footer p {
     display: none;
   }
 }
-.agenda {
+.sesion {
   display: grid;
   padding: 5%;
 }
-.agenda div {
+.sesion div {
   padding: 2%;
 }
-.agenda-2 {
+.sesion-2 {
   padding: 3%;
 }
-.agenda-3 {
+.sesion-3 {
   padding: 3%;
 }
-.agenda-3 h3 {
+.sesion-3 h3 {
   text-align: left;
 }
-.agenda-3 ul {
+.sesion-3 ul {
   list-style: circle;
 }
-.agenda-3 ul li {
+.sesion-3 ul li {
   text-align: left;
 }
 
 @media (min-width: 576px) {
-  .agenda {
+  .sesion {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .agenda div {
+  .sesion div {
     text-align: left;
   }
-  .agenda div input {
+  .sesion div input {
     text-align: left;
   }
-  .agenda .check-sb {
+  .sesion .check-sb {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     text-align: center;
   }
-  .agenda h3 {
+  .sesion .check-sb label {
+    grid-column: span 5;
+  }
+  .sesion .check-sb input {
+    max-width: 15px;
+  }
+  .sesion h3 {
     grid-column: span 2;
     text-align: left;
   }
-  .agenda-boton {
+  .sesion-boton {
     grid-column: span 2;
   }
-  .agenda-2 {
+  .sesion-3 {
     padding-top: 7%;
   }
-  .agenda-2 h3 {
+  .sesion-3 h3 {
     text-align: left;
   }
-  .agenda-2 p {
+  .sesion-3 p {
     text-align: left;
   }
-  .agenda div {
+  .sesion-2 {
+    display: grid;
+  }
+  .sesion-2 h3 {
+    align-self: center;
+    grid-column: span 2;
+  }
+  .sesion-2 .enviar {
+    grid-column: span 2;
+  }
+  .sesion div {
     padding: 3%;
     align-self: center;
+  }
+  .pass {
+    grid-column: span 2;
+  }
+  .user {
+    align-self: center;
+    grid-column: span 2;
   }
 }
 @media (min-width: 768px) {
@@ -456,10 +481,10 @@ footer p {
     display: grid;
     grid-template-columns: 60% 40%;
   }
-  .agenda {
+  .sesion {
     border-right: solid 1px rgb(188, 188, 188);
   }
-  .agenda-3 {
+  .sesion-3 {
     padding-top: 3%;
     border-top: solid 1px rgb(188, 188, 188);
     grid-column: span 2;
@@ -482,29 +507,61 @@ footer p {
 
 .filtros {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto;
   height: 100%;
+  padding: 8%;
+  gap: 3%;
 }
 .filtros div {
   text-align: left;
 }
 
-.bpf-titulo {
-  grid-column: span 2;
-  height: 2rem;
-}
-
-.f-precio {
-  grid-row: span 3;
-}
-
 .f-categoria {
-  grid-row: span 3;
+  display: grid;
+  padding-bottom: 10%;
+  gap: 5%;
+}
+.f-categoria div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.f-categoria div label {
+  grid-column: span 5;
+}
+.f-precio {
+  display: grid;
+  padding-bottom: 10%;
+  gap: 10%;
+}
+.f-precio div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.f-precio div label {
+  grid-column: span 5;
+}
+.f-precio .elije-precio label {
+  grid-column: span 2;
+}
+.f-precio .elije-precio input {
+  grid-column: span 4;
+}
+.f-precio-botones {
+  grid-column: span 6;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  gap: 5%;
+}
+
+.elije-precio {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 2%;
 }
 
 .label-precio {
-  width: 20%;
+  width: 80%;
 }
 
 .busqueda-carrito {
@@ -582,15 +639,24 @@ footer p {
 }
 
 @media (min-width: 768px) {
-  .filtros {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 600px;
+  .final-carro {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2%;
+    justify-content: center;
+    padding-bottom: 5%;
   }
-  .filtros div {
-    text-align: left;
+  .finalizar-carrito {
+    max-height: 150px;
+    width: 100%;
   }
+  .finalizar-carrito button {
+    height: 100%;
+    width: 50%;
+    padding: 5%;
+  }
+}
+@media (min-width: 992px) {
   .cont-productos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -601,11 +667,21 @@ footer p {
   .cont-productos .secc-productos .card {
     height: 400px;
   }
+  .filtros {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 700px;
+  }
+  .filtros div {
+    text-align: left;
+  }
   .f-categoria {
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-bottom: 10%;
   }
   .f-precio {
     height: 300px;
@@ -626,22 +702,6 @@ footer p {
   }
   .label-precio {
     width: 80%;
-  }
-  .final-carro {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 2%;
-    justify-content: center;
-    padding-bottom: 5%;
-  }
-  .finalizar-carrito {
-    max-height: 150px;
-    width: 100%;
-  }
-  .finalizar-carrito button {
-    height: 100%;
-    width: 50%;
-    padding: 5%;
   }
 }
 

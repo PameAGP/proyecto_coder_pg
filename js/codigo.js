@@ -393,6 +393,119 @@ console.log (usuarios);
 
 // }
 
+//------------------------ENCABEZADO Y PIE 🧑🦶---------------------------------
+
+let headerIndex = document.getElementById('encabezado-index');
+let headerSeccions = document.getElementById('encabezado');
+let footerIndex = document.getElementById('pie-index');
+let footerSeccions = document.getElementById ('pie');
+
+let secc1 = './';
+let secc2 = '../'
+let secc3 = './pages/'
+
+encabezadoElegido(headerSeccions, secc2, secc1, secc1);
+footerElegido (footerSeccions, secc1, secc2);
+
+function encabezadoElegido (elegido, op1, op2, op3){
+    elegido.innerHTML=`
+    <nav class="navbar navbar-expand-md navbar-dark bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">Peluquería Nico's</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-black">
+          <ul class="navbar-nav flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="${op1}index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${op2}productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${op2}contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${op2}sob_nosotros.html">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${op2}extras.html">Extras</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuario
+              </a>
+              <ul class="dropdown-menu bg-black ">
+                <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Iniciar Sesión</a></li>
+                <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Registrarme</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+    `;
+
+}
+
+function footerElegido (elegido, op1, op2){
+elegido.innerHTML = `
+<div class="container  footer-cont">
+
+      <div class="footer-info">
+        <h5>Horario de atención</h5>
+        <p>Lunes a Viernes: <br>
+          10:00 hs a 19:00 hs <br>
+          Sábado <br>
+          10:00 hs a 14:30 hs
+        </p>
+      </div>
+
+      <div class="footer-info">
+        <h5>¿Consultas?</h5>
+        <p><a href="${op1}contacto.html">Llena el formulario de contacto haciendo click aquí</a></p>
+      </div>
+
+      <div class="footer-info">
+        <h5>Dirección:</h5>
+        <p>Algun Lado 3399 esquina Una Esquina</p>
+      </div>
+
+      <div class="footer-info">
+        <h5>Redes Sociales</h5>
+        <div class="redes-sociales">
+          <a href="https://es-la.facebook.com/" target="_blank">
+            <img src="${op2}img/facebook.png" alt="facebook">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="${op2}img/instagram.png" alt="instagram">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src="${op2}img/youtube.png" alt="youtube">
+          </a>
+          <a href="https://twitter.com/?lang=es" target="_blank">
+            <img src="${op2}img/Twitter_Logo.png" alt="Twitter">
+          </a>
+        </div>
+      </div>
+
+    </div>
+`;
+}
+
+
+
 // -------------------LLAMANDO AL CARRITO GUARDADO 🛒💾-----------------------------
 let carro = JSON.parse(localStorage.getItem('carroRecuperado')) || [];
 

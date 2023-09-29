@@ -59,6 +59,9 @@ promociones.push(
 
 console.table(promociones);
 
+encabezadoElegido(headerIndex, secc1, secc3, secc3);
+
+
 let promoEnCarrusel = document.getElementById('carrusel');
 
 promoEnCarrusel.innerHTML += `
@@ -105,3 +108,4 @@ for (const producto of productosDestacados) {
     `; 
 }
 
+footerElegido(footerIndex, secc3, secc1);
