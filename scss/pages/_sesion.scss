@@ -1,11 +1,13 @@
 
 
 .sesion {
-    display: grid;
+    display: flex;
     padding: 5%;
+    flex-direction: column;
 
     div{
         padding: 2%;
+        height: 100%;
     }
     &-2{
         padding: 3%;
@@ -25,6 +27,19 @@
 
         ul li{
             text-align: left;
+        }
+    }
+    
+    & .check-sb {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+
+        & label {
+            grid-column: span 5;
+        }
+
+        & input {
+            height: 30px;
         }
     }
 

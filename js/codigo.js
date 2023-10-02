@@ -255,21 +255,21 @@ const producto13 = new producto(
 );
 
 const producto14 = new producto(
-14,
-'Shampoo para barba y bigote',
-'https://http2.mlstatic.com/D_NQ_NP_2X_763111-MLU32733123849_112019-F.webp',
-'',
-270,
-true,
-false,
-true,
-true,
-false,
-55,
-1
+  14,
+  'Shampoo para barba y bigote',
+  'https://http2.mlstatic.com/D_NQ_NP_2X_763111-MLU32733123849_112019-F.webp',
+  '',
+  270,
+  true,
+  false,
+  true,
+  true,
+  false,
+  55,
+  1
 );
 
-const producto15 = new producto (
+const producto15 = new producto(
   15,
   'Cera para el cabello en gel Barber Style',
   'https://http2.mlstatic.com/D_NQ_NP_2X_610541-MLU48041981231_102021-F.webp',
@@ -286,9 +286,9 @@ const producto15 = new producto (
 
 console.log(producto1);
 
-const inventario = [];
+const inventarioL = [];
 
-inventario.push(
+inventarioL.push(
   producto1,
   producto2,
   producto3,
@@ -316,7 +316,7 @@ productosDestacados.push(
 )
 
 class usuario {
-  constructor (
+  constructor(
     userName,
     nombreUsuario,
     apellidoUsuario,
@@ -326,7 +326,7 @@ class usuario {
     email,
     promo,
     info
-  ){
+  ) {
     this.userName = userName;
     this.nombreUsuario = nombreUsuario;
     this.apellidoUsuario = apellidoUsuario;
@@ -341,7 +341,7 @@ class usuario {
 
 const usuarios = [];
 
-const usuario1 = new usuario (
+const usuario1 = new usuario(
   'Pepe123',
   'José',
   'Gomez',
@@ -355,7 +355,7 @@ const usuario1 = new usuario (
 
 usuarios.push(usuario1);
 
-console.log (usuarios);
+console.log(usuarios);
 // console.table(productosDestacados);
 
 // // ----------------Validaciones---------------------
@@ -393,22 +393,24 @@ console.log (usuarios);
 
 // }
 
+
+
 //------------------------ENCABEZADO Y PIE 🧑🦶---------------------------------
 
 let headerIndex = document.getElementById('encabezado-index');
 let headerSeccions = document.getElementById('encabezado');
 let footerIndex = document.getElementById('pie-index');
-let footerSeccions = document.getElementById ('pie');
+let footerSeccions = document.getElementById('pie');
 
 let secc1 = './';
 let secc2 = '../'
 let secc3 = './pages/'
 
 encabezadoElegido(headerSeccions, secc2, secc1, secc1);
-footerElegido (footerSeccions, secc1, secc2);
+footerElegido(footerSeccions, secc1, secc2);
 
-function encabezadoElegido (elegido, op1, op2, op3){
-    elegido.innerHTML=`
+function encabezadoElegido(elegido, op1, op2, op3) {
+  elegido.innerHTML = `
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html">Peluquería Nico's</a>
@@ -459,8 +461,8 @@ function encabezadoElegido (elegido, op1, op2, op3){
 
 }
 
-function footerElegido (elegido, op1, op2){
-elegido.innerHTML = `
+function footerElegido(elegido, op1, op2) {
+  elegido.innerHTML = `
 <div class="container  footer-cont">
 
       <div class="footer-info">
@@ -517,13 +519,13 @@ const saveLocal = () => {
 }
 
 const deleteLocal = () => {
-  carritoMuestra.innerHTML='';
+  carritoMuestra.innerHTML = '';
   carritoVacio();
   localStorage.setItem('carroRecuperado', JSON.stringify(carro = []));
 }
 
 //---------------FUNCION MOSTRAR QUE EL CARRO ESTÁ VACÍO 😢
-function carritoVacio(){
+function carritoVacio() {
   document.getElementById('el-total').innerText = '';
   finalCarrito.innerHTML = '<h4>Nada por aquí... 🥀</h4>';
   carritoIcono.innerHTML = `
@@ -535,10 +537,10 @@ function carritoVacio(){
 }
 
 //-----------FUNCION FINALIZAR CARRITO O VACIARLO 😎
-function finalizarOvaciar (){
+function finalizarOvaciar() {
   finalCarrito.innerHTML = `
   <button id="vaciar-carrito" class="btn btn-primary" onclick="location.reload()">Vaciar carrito</button>
-  <button id="finalizar-carro" class="btn btn-primary" onclick="location.href='./finalDeCompra.html'">Finalizar compra</button>
+  <button id="finalizar-carro" class="btn btn-primary">Finalizar compra</button>
   `;
   carritoIcono.innerHTML = `
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
@@ -550,12 +552,17 @@ function finalizarOvaciar (){
 
   let finalizarCarro = document.getElementById('finalizar-carro');
   finalizarCarro.addEventListener('click', () => {
-    // deleteLocal();
-    // finalizarCompra();
+    localStorage.setItem('carroRecuperado', JSON.stringify(carro = []));
+    finalizarCompra();
+    setTimeout("redirecciona()", 2000);
   });
 }
 
-function finalizarCompra (){
+function redirecciona() {
+  location.href = './productos.html';
+}
+
+function finalizarCompra() {
   Swal.fire({
     position: 'top-end',
     icon: 'success',
@@ -567,10 +574,10 @@ function finalizarCompra (){
 
 //----------------- Función Mostrar Carrito  🛒💾🛒---------------
 function carritoMostrar(listaCarrito) {
-  carritoMuestra.innerHTML='';
+  carritoMuestra.innerHTML = '';
   for (const product of listaCarrito) {
 
-    if (product.cantidadEnCarrito < 2){
+    if (product.cantidadEnCarrito < 2) {
       console.log('Cartel 1');
       carritoMuestra.innerHTML += `
       <div class="card cardCarrito">
@@ -586,7 +593,7 @@ function carritoMostrar(listaCarrito) {
                   </div>
                 </div>
       `;
-    }else{
+    } else {
       carritoMuestra.innerHTML += `
       <div class="card cardCarrito">
                   <img src=${product.imagenProducto} class="card-img-top" alt=${product.nombreProducto}>
@@ -605,19 +612,19 @@ function carritoMostrar(listaCarrito) {
       `;
     }
 
- 
+
   }
 
-  const total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito , 0);
+  const total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito, 0);
 
-  if(carro.length == 0){
+  if (carro.length == 0) {
     document.getElementById('el-total').innerText = '';
-  }else{
-    document.getElementById('el-total').innerText = 'Total: $' +total;
+  } else {
+    document.getElementById('el-total').innerText = 'Total: $' + total;
   }
-  
 
-  
+
+
   let botonEliminar = document.getElementsByClassName('no-carrito');
 
   for (const boton of botonEliminar) {
@@ -631,10 +638,10 @@ function carritoMostrar(listaCarrito) {
 
       if (carro.length == 0) {
         console.log('CARRO VACIO')
-        carritoVacio(); 
+        carritoVacio();
       } else {
-      finalizarOvaciar();
-      
+        finalizarOvaciar();
+
       }
       saveLocal();
 
@@ -642,18 +649,18 @@ function carritoMostrar(listaCarrito) {
 
   }
 
-  let botonUnoMenos = document.getElementsByClassName ('uno-menos');
+  let botonUnoMenos = document.getElementsByClassName('uno-menos');
 
   for (const boton of botonUnoMenos) {
     boton.addEventListener('click', () => {
-      
-      carritoMuestra.innerHTML ='';
 
-      console.log ('Uno menos en: ' +boton.id)
+      carritoMuestra.innerHTML = '';
+
+      console.log('Uno menos en: ' + boton.id)
 
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
 
-      console.log (seleccionado.cantidadEnCarrito);
+      console.log(seleccionado.cantidadEnCarrito);
 
       quitarUnoDelCarro(seleccionado);
 
@@ -661,91 +668,88 @@ function carritoMostrar(listaCarrito) {
         console.log('CARRO VACIO')
         carritoVacio();
       } else {
-      finalizarOvaciar();
-      
+        finalizarOvaciar();
+
       }
 
     });
   }
 
-  let botonUnoMas = document.getElementsByClassName ('uno-mas');
+  let botonUnoMas = document.getElementsByClassName('uno-mas');
 
   for (const boton of botonUnoMas) {
     boton.addEventListener('click', () => {
-      
-      carritoMuestra.innerHTML ='';
 
-      console.log ('Uno mas en: ' +boton.id)
+      carritoMuestra.innerHTML = '';
+
+      console.log('Uno mas en: ' + boton.id)
 
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
 
-      console.log (seleccionado.cantidadEnCarrito);
+      console.log(seleccionado.cantidadEnCarrito);
 
       subeUnoDelCarrito(seleccionado);
 
     });
   }
-  
+
 
 }
 
 //------------Quita uno ❌🧴
-function quitarUnoDelCarro (producto){
+function quitarUnoDelCarro(producto) {
 
-  console.log (producto.id);
-  console.log (producto.cantidadEnCarrito);
+  console.log(producto.id);
+  console.log(producto.cantidadEnCarrito);
 
-  if (producto.cantidadEnCarrito > 1){
+  if (producto.cantidadEnCarrito > 1) {
     console.log('Menos uno')
     carro.map((prod) => {
-      if (prod.id === producto.id){
+      if (prod.id === producto.id) {
         prod.cantidadEnCarrito--;
-        // console.log (prod.cantidadEnCarrito);
       }
-      console.log (producto.cantidadEnCarrito);
+      console.log(producto.cantidadEnCarrito);
       saveLocal();
     });
-  }else{
+  } else {
     eliminaDeCarrito(producto);
   }
 
-  carritoMostrar (carro);
+  carritoMostrar(carro);
 
 }
 
 //-----------------Agrega uno ⬆️⬆️🧴
-function subeUnoDelCarrito (producto){
+function subeUnoDelCarrito(producto) {
 
-  if (producto.cantidadEnCarrito < producto.stock){
-    console.log('Mas uno' +producto.cantidadEnCarrito);
+  if (producto.cantidadEnCarrito < producto.stock) {
+    console.log('Mas uno' + producto.cantidadEnCarrito);
     carro.map((prod) => {
-      if (prod.id === producto.id){
+      if (prod.id === producto.id) {
         prod.cantidadEnCarrito++;
       }
-      console.log (producto.cantidadEnCarrito);
+      console.log(producto.cantidadEnCarrito);
       saveLocal();
     });
-  }else{
+  } else {
     cartelNoMasStock(producto);
-    // carritoMostrar(carro);
   }
 
-  carritoMostrar (carro);
+  carritoMostrar(carro);
 }
 
 // --------------FUNCION ELIMINAR DE CARRITO ❌❌❌----------------
 const eliminaDeCarrito = (idEli) => {
-  
-  carritoMuestra.innerHTML='';
+
+  carritoMuestra.innerHTML = '';
   let busca = carro.indexOf(idEli);
 
-  while(idEli.cantidadEnCarrito > 1 ){
-    // console.log(idEli.cantidadEnCarrito);
-    idEli.cantidadEnCarrito --;
+  while (idEli.cantidadEnCarrito > 1) {
+    idEli.cantidadEnCarrito--;
 
   }
 
-  
+
   if (busca != -1) {
     carro.splice(busca, 1);
     console.table(carro);
@@ -758,8 +762,27 @@ const eliminaDeCarrito = (idEli) => {
 
 // ---------------MOSTRAR PRODUCTOS EN PANTALLA 📺---------------
 
-function mostrarProductos(listadoProductos) {
-  sectionProductos.innerHTML='';
+const llamarInventario = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(inventarioL)
+    }, 1000)
+  })
+}
+
+let inventario = [];
+
+llamarInventario()
+  .then((resp) => {
+    inventario = resp
+    mostrarProductos(inventario)
+  })
+
+const sectionProductos = document.getElementById('tarjetasProductos');
+
+const mostrarProductos = (listadoProductos) => {
+  // function mostrarProductos(listadoProductos) {
+  sectionProductos.innerHTML = '';
   for (const product of listadoProductos) {
     sectionProductos.innerHTML += `
         <div class="card card-animacion" >
@@ -780,7 +803,7 @@ function mostrarProductos(listadoProductos) {
   for (const boton of botones) {
     boton.addEventListener('click', () => {
 
-          console.log('Se clickeo boton ' + boton.id)
+      console.log('Se clickeo boton ' + boton.id)
 
       const seleccionado = listadoProductos.find((producto) =>
         producto.id == boton.id);
@@ -797,22 +820,19 @@ function mostrarProductos(listadoProductos) {
 
 // ---------------CARRO QUE SE VA SELECCIONANDO 🛒---------------
 function agregarAlCarrito(producto) {
-  
+
   const repetido = carro.some((prodRepetido) => prodRepetido.id === producto.id);
 
-
-  console.log(producto.stock);
-  
   var stock = 1;
   carro.map((prod) => {
-    if (prod.id === producto.id){
+    if (prod.id === producto.id) {
       stock = prod.cantidadEnCarrito;
     }
   });
 
-  if (repetido == true && stock < producto.stock){    
+  if (repetido == true && stock < producto.stock) {
     carro.map((prod) => {
-      if (prod.id === producto.id){
+      if (prod.id === producto.id) {
         prod.cantidadEnCarrito++;
         stock = prod.cantidadEnCarrito;
         saveLocal();
@@ -820,7 +840,7 @@ function agregarAlCarrito(producto) {
         cartelAgregadoCarrito(producto);
       }
     });
-  }else if (repetido == false && stock < producto.stock) {
+  } else if (repetido == false && stock < producto.stock) {
     carro.push(producto);
     console.table(carro);
     saveLocal();
@@ -830,112 +850,135 @@ function agregarAlCarrito(producto) {
     // alert('¡Lo sentimos! ¡No hay más stock del producto seleccionado! ❌');
     cartelNoMasStock(producto);
   }
-
-
-
-
 }
 
-// buscaStock ()
-
-// function buscaStock (parametro){
-//   const filtrados = carro.filter((producto) => producto.cantidadEnCarrito == parametro);
-//   console.table(filtrados);
-// }
-
-//------------------Encuentra productos femeninos 💁‍♀️💁‍♀️
-function listaFemenino() {
-
-  function filtraProductos(opcion) {
-    const filtrados = inventario.filter((producto) => producto.femenino == opcion);
-    // console.table(filtrados);
-
-    mostrarProductos(filtrados);
-  }
-
-  filtraProductos(true);
-
-}
-
-//---------------Filtra productos masculinos 👨‍🦱👨‍🦱
-
-function listaMasculino() {
-
-  function filtraProductos(opcion) {
-    const filtrados = inventario.filter((producto) => producto.masculino == opcion);
-    console.table(filtrados);
-
-    mostrarProductos(filtrados);
-  }
-
-  filtraProductos(true);
-
-}
-
-//---------------Filtra productos solo de barba 👨‍🦱
-
-function listaBarba() {
-
-  function filtraProductos(opcion) {
-    const filtrados = inventario.filter((producto) => producto.barba == opcion);
-    console.table(filtrados);
-
-    mostrarProductos(filtrados);
-  }
-
-  filtraProductos(true);
-
-}
-
-//---------------Filtra productos solo de cabello 💇‍♀️
-
-function listaCabello() {
-
-  function filtraProductos(opcion) {
-    const filtrados = inventario.filter((producto) => producto.cabello == opcion);
-    console.table(filtrados);
-
-    mostrarProductos(filtrados);
-  }
-
-  filtraProductos(true);
-
-}
-
-//-------------Filtra por precio
 
 
-function precioMax(precioMaximo, precioMinimo) {
-  const filtrados = inventario.filter((producto) => producto.precio <= precioMaximo && producto.precio >= precioMinimo);
+const prodFemeninos = [];
+const prodMasculinos = [];
+const prodBarba = [];
+const prodCabello = [];
+
+llamarInventario()
+  .then((resp) => {
+    inventario = resp
+    //------------------Encuentra productos femeninos 💁‍♀️💁‍♀️
+    for (let i = 0; i < inventario.length; i++) {
+      if (inventario[i].femenino == true) {
+        prodFemeninos.push(inventario[i]);
+      }
+    }
+    console.table(prodFemeninos);
+    //---------------Filtra productos masculinos 👨‍🦱👨‍🦱
+    for (let i = 0; i < inventario.length; i++) {
+      if (inventario[i].masculino == true) {
+        prodMasculinos.push(inventario[i]);
+      }
+    }
+    console.table(prodMasculinos);
+    //---------------Filtra productos solo de barba 👨‍🦱
+    for (let i = 0; i < inventario.length; i++) {
+      if (inventario[i].barba == true) {
+        prodBarba.push(inventario[i]);
+      }
+    }
+    //---------------Filtra productos solo de cabello 💇‍♀️
+    for (let i = 0; i < inventario.length; i++) {
+      if (inventario[i].cabello == true) {
+        prodCabello.push(inventario[i]);
+      }
+    }
+  })
+
+//-------------Filtra por precio ↗️↗️↘️↘️
+
+function precioMaxDes(array, precioMaximo, precioMinimo) {
+  const filtrados = array.filter((producto) => producto.precio <= precioMaximo && producto.precio >= precioMinimo);
   console.table(filtrados);
   filtrados.sort((x, y) => y.precio - x.precio);
-  
+
   mostrarProductos(filtrados);
+
+}
+
+function precioMaxAs(array, precioMaximo, precioMinimo) {
+  const filtrados = array.filter((producto) => producto.precio <= precioMaximo && producto.precio >= precioMinimo);
+  console.table(filtrados);
+  filtrados.sort((x, y) => x.precio - y.precio);
+
+  if (filtrados.length == 0) {
+    sectionProductos.innerHTML = (`
+      <h3 class="cartel-no-hay">No se encontraron productos 😓</h3>
+      `);
+  } else {
+    mostrarProductos(filtrados);
+  }
   
-  }
+}
 
-  //--------------------FUNCION Cartel agregado al carrito 🖥➕➕------------------
+//--------------------FUNCION Cartel agregado al carrito 💬💬➕➕------------------
 
-  function cartelAgregadoCarrito(producto){
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      background: '#191919'
-        })
-    
-    Toast.fire({
-      icon: 'success',
-      title: 'Agregando al carrito: ' +producto.nombreProducto+'.'
-    })
-  }
+function cartelAgregadoCarrito(producto) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    background: '#191919'
+  })
 
-  function cartelNoMasStock (producto){
-    Swal.fire({
-      icon: 'error',
-      title: '¡Sin Stock!',
-      text: 'No hay más stock del producto seleccionado: ' +producto.nombreProducto,
-      // footer: '<a href="">Why do I have this issue?</a>'
-    })
-  }
+  Toast.fire({
+    icon: 'success',
+    title: 'Agregando al carrito: ' + producto.nombreProducto + '.'
+  })
+}
+
+function cartelNoMasStock(producto) {
+  Swal.fire({
+    icon: 'error',
+    title: '¡Sin Stock!',
+    text: 'No hay más stock del producto seleccionado: ' + producto.nombreProducto,
+    // footer: '<a href="">Why do I have this issue?</a>'
+  })
+}
+
+function checkAll(opcion) {
+  document.querySelectorAll('#f-categoria input[type=checkbox]').forEach(function (checkElement) {
+    checkElement.checked = false;
+    opcion.checked = true;
+    checkAs.checked = false;
+    checkDes.checked = false;
+  });
+}
+
+function desmarcaTodo() {
+  document.querySelectorAll('#f-categoria input[type=checkbox]').forEach(function (checkElement) {
+    checkElement.checked = false;
+    checkAs.checked = false;
+    checkDes.checked = false;
+  });
+}
+
+function filtro(opcion, opcion2) {
+  opcion.addEventListener('click', function () {
+    if (opcion.checked) {
+      sectionProductos.innerHTML = '';
+      mostrarProductos(opcion2);
+      checkAll(opcion);
+    } else {
+      mostrarProductos(inventario);
+      checkAs.checked = false;
+      checkDes.checked = false;
+    }
+  });
+}
+
+function mayorMenor(array) {
+  array.sort((x, y) => y.precio - x.precio);
+  mostrarProductos(array);
+}
+
+function menorMayor(array) {
+  array.sort((x, y) => x.precio - y.precio);
+  mostrarProductos(array);
+}

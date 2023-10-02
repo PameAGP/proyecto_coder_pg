@@ -26,7 +26,7 @@ carritoMostrar(carro);
 
 // ---------------MOSTRAR PRODUCTOS EN PANTALLA 📺---------------
 
-const sectionProductos = document.getElementById('tarjetasProductos');
+
 
 mostrarProductos(inventario);
 
@@ -37,85 +37,87 @@ mostrarProductos(inventario);
 
 var checkF = document.getElementById('dama');
 
-checkF.addEventListener('click', function(){
-if(checkF.checked){
-  sectionProductos.innerHTML = '';
-  listaFemenino();
-}else{
-  mostrarProductos(inventario);
-}
-});
+filtro (checkF, prodFemeninos)
 
 //---------------Coloca productos masculinos 👨‍🦱👨‍🦱
 
 var checkM = document.getElementById('caballero');
 
-checkM.addEventListener('click', function(){
-  if (checkM.checked){
-    sectionProductos.innerHTML += '';
-    listaMasculino();
-  }else{
-    mostrarProductos(inventario);
-  }
-});
+filtro (checkM, prodMasculinos);
 
 //---------------Coloca productos solo de barba 👨‍🦱
 
 var checkB = document.getElementById('barba');
-checkB.addEventListener('click', function(){
-  if (checkB.checked){
-    sectionProductos.innerHTML += '';
-    listaBarba();
-  }else{
-    mostrarProductos(inventario);
-  }
-});
+
+filtro (checkB, prodBarba);
 
 //---------------Coloca productos solo de cabello 💇‍♀️
 
 var checkCabello = document.getElementById('cabello');
-checkCabello.addEventListener('click', function(){
-  if (checkCabello.checked){
-    sectionProductos.innerHTML += '';
-    listaCabello();
-  }else{
-    mostrarProductos(inventario);
-  }
-});
 
-//----------------Coloca productos descendentemente 
+filtro (checkCabello, prodCabello);
+
+//----------------Coloca productos descendentemente ↘️
+
 var checkDes = document.getElementById('descendente');
 
 checkDes.addEventListener('click', function(){
+  checkAs.checked = false;
   if (checkDes.checked){
-    sectionProductos.innerHTML += '';
-    inventario.sort((x, y) => y.precio - x.precio);
-    console.table(inventario);
-    mostrarProductos(inventario);
+    if(checkF.checked == true ){
+      mayorMenor (prodFemeninos);
+    }else if (checkM.checked == true){
+      mayorMenor (prodMasculinos);
+    } else if (checkB.checked == true){
+      mayorMenor (prodBarba);
+      mostrarProductos(prodBarba);
+    } else if (checkCabello.checked == true){
+      mayorMenor (prodCabello);
+    } else{
+    mayorMenor(inventario);
+    }
+
   }else{
     inventario.sort((x, y) => x.id - y.id);
     console.table(inventario);
     mostrarProductos(inventario);
+    document.querySelectorAll('#f-categoria input[type=checkbox]').forEach(function(checkElement) {
+      checkElement.checked = false;
+  });
   }
 });
 
-//----------------Coloca productos Ascendentemente
+//----------------Coloca productos Ascendentemente ↗️
+
 var checkAs = document.getElementById('ascendente');
 
 checkAs.addEventListener('click', function(){
   if (checkAs.checked){
-    sectionProductos.innerHTML += '';
-    inventario.sort((x, y) => x.precio - y.precio);
-    console.table(inventario);
-    mostrarProductos(inventario);
+    checkDes.checked = false;
+    if(checkF.checked == true ){
+      menorMayor (prodFemeninos);
+    }else if (checkM.checked == true){
+      menorMayor (prodMasculinos);
+    } else if (checkB.checked == true){
+      menorMayor (prodBarba);
+    } else if (checkCabello.checked == true){
+      menorMayor (prodCabello);
+    } else{
+    menorMayor(inventario);
+    }
+
   }else{
     inventario.sort((x, y) => x.id - y.id);
     console.table(inventario);
     mostrarProductos(inventario);
+    document.querySelectorAll('#f-categoria input[type=checkbox]').forEach(function(checkElement) {
+      checkElement.checked = false;
+  });
   }
 });
 
-//-------------Filtra por precio
+
+//-------------Filtra por precio  
 
 var botonPreciosElegidos = document.getElementById ('b-elegidos-precios');
 var botonVolver = document.getElementById ('b-elegidos-volver');
@@ -124,18 +126,42 @@ botonPreciosElegidos.addEventListener('click', () => {
 
 var max = parseInt(document.getElementById ('precioMaximo').value);
 var min = parseInt(document.getElementById ('precioMinimo').value);
-  console.log (max, min);
+
+  if (checkDes.checked == true) {
+    if (checkF.checked == true){
+      precioMaxDes(prodFemeninos, max, min);
+    } else if (checkM.checked == true){
+      precioMaxDes(prodMasculinos, max, min);
+    } else if (checkB.checked == true){
+      precioMaxDes(prodBarba, max, min);
+    } else if(checkCabello.checked == true){
+      precioMaxDes(prodCabello, max, min);
+    }else{
+      precioMaxDes(inventario,max,min);
+    } 
+  } else if (checkAs.checked == true){
+    if (checkF.checked == true){
+      precioMaxAs(prodFemeninos, max, min);
+    } else if (checkM.checked == true){
+      precioMaxAs(prodMasculinos, max, min);
+    } else if (checkB.checked == true){
+      precioMaxAs(prodBarba, max, min);
+    } else if(checkCabello.checked == true){
+      precioMaxAs(prodCabello, max, min);
+    }else{
+      precioMaxAs(inventario,max,min);
+    }
+  } else {
+    precioMaxAs(inventario, max, min);
+  }
   
-  sectionProductos.innerHTML='';
-
-  precioMax(max, min);
-
 });
 
 botonVolver.addEventListener ('click', () => {
   document.getElementById('precioMaximo').value='';
   document.getElementById('precioMinimo').value='';
   sectionProductos.innerHTML += '';
+  desmarcaTodo();
   mostrarProductos(inventario);
 });
 
@@ -158,3 +184,4 @@ botonBuscar.addEventListener('click', () => {
 
 
 });
+

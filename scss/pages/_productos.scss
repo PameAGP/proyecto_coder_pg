@@ -1,13 +1,19 @@
 .filtros {
     display: grid;
-    grid-template-rows: auto;
-    height: 100%;
-    padding: 8%;
+    grid-template-rows: 5% 40% 50%;
+    height: 75vh;
+    padding: auto;
     gap: 3%;
+    justify-content: center;
 
-    div {
+    & div {
         text-align: left;
     }
+
+}
+
+.check-sb{
+    height: 25px;
 }
 
 .f {
@@ -61,7 +67,10 @@
 
 }
 
-
+.cartel-no-hay{
+    padding: 25%;
+    font-size: 2rem;
+}
 
 .elije-precio {
     display: grid;
@@ -119,6 +128,7 @@
     & .card-img-top {
         max-height: 100px;
         width: 50%;
+        align-self: center;
         object-fit: scale-down;
         margin: 2%;
     }
@@ -169,6 +179,16 @@
 
 @media(min-width: 768px) {
 
+    .filtros {
+       display: grid;
+       max-height: 35vh;
+       grid-template-columns: 1fr 1fr;
+       grid-template-rows: 10% 90%;
+
+       & h5 {
+        grid-column: span 2;
+       }
+    }
 
     .final-carro {
         display: grid;
@@ -189,6 +209,11 @@
             padding: 5%;
         }
     }
+
+    .cartel-no-hay{
+        padding: 25%;
+        grid-column: span 3;
+    }
 }
 
 @media(min-width: 992px) {
@@ -206,10 +231,11 @@
     }
 
     .filtros {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        height: 700px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 230px 250px;
+
 
         div {
             text-align: left;
@@ -217,28 +243,12 @@
     }
 
     .f-categoria {
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-bottom: 10%;
+        grid-column: span 2;
+        padding-bottom: 0;
     }
 
     .f-precio {
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        &-botones {
-            padding: 10px;
-        }
-    }
-
-    .bpf-titulo {
-        height: 100px;
-        display: flex;
-        align-items: center;
+        grid-column: span 2;
     }
 
     .elije-precio {
@@ -247,5 +257,10 @@
 
     .label-precio {
         width: 80%;
+    }
+
+    .cartel-no-hay{
+        padding: 25%;
+        grid-column: span 4;
     }
 }
