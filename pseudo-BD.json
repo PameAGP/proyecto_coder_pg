@@ -1,0 +1,233 @@
+{
+    "productos": [
+        {
+            "id":1,
+            "nombreProducto":"Cera pomada Cikonielf Styling",
+            "imagenProducto":"https://www.cdiscount.com/pdt2/8/0/7/1/700x700/cik7309587664807/rw/cikonielf-pommade-coiffante-60g-longue-duree-hydra.jpg",
+            "descripcion":"",
+            "precio": 300,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":20,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":2,
+            "nombreProducto":"Cera para peinar profesional Shock",
+            "imagenProducto":"https://m.media-amazon.com/images/I/61oHxr8QjoL._SX425_.jpg",
+            "descripcion":"",
+            "precio": 800,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":6,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":3,
+            "nombreProducto":"Cera Pelo & Barba Capilatis Hombre",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_829015-MLU41018740930_032020-F.webp",
+            "descripcion":"Barba perfecta e impecable: cera de modelado para dar forma a distintos tipos de barba. Hidrata, suaviza y define los contornos manteniendo un aspecto natural. Ofrece fijación y estilo, minimizando el encrespamiento en barbas rebeldes. Peinados de larga duración: apta para todo tipo de cabellos, permite definir peinados con precisión y sostener estilos únicos con total control. Especialmente útil para hombres que desean pelo & barba imponentes, alineados y sin frizz.",
+            "precio": 506,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":true,
+            "stock":33,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":4,
+            "nombreProducto":"Cera Gel Vikingo para Barba",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_678171-MLU45541628787_042021-O.webp",
+            "descripcion":"",
+            "precio": 293,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":false,
+            "stock":5,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":5,
+            "nombreProducto":"Crema de peinar Pantene",
+            "imagenProducto":"https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/3/0/30335_10_1.jpg",
+            "descripcion":"La crema de peinar Rizos Definidos de Pantene cuenta con el poder de la exclusiva fórmula Pro-V de Pantene y su nuevo envase te permite encontrar fácilmente el producto ideal para tu tipo de cabello.",
+            "precio": 290,
+            "femenino":true,
+            "masculino":false,
+            "barba":false,
+            "cabello":true,
+            "stock":100,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":6,
+            "nombreProducto":"Crema Para Peinar Pantene Colágeno",
+            "imagenProducto":"https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/8/0/808682.jpg",
+            "descripcion":"",
+            "precio": 620,
+            "femenino":true,
+            "masculino":false,
+            "barba":false,
+            "cabello":true,
+            "stock":36,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":7,
+            "nombreProducto":"Gel Primicia Modelador Efecto Mojado",
+            "imagenProducto":"https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/8/7/87959_001.jpg",
+            "descripcion":"¡Nada más atractivo que lucir un peinado impecable y único! Gel modelador para cabello. Primicia con fijación media para dar un efecto mojado y un brillo intenso.",
+            "precio": 450,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":40,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":8,
+            "nombreProducto":"DR. SELBY - fijador para cabello",
+            "imagenProducto":"https://www.selby.com.uy/wp-content/uploads/2021/12/fijador_120-510x508.jpg",
+            "descripcion":"",
+            "precio": 130,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":20,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":9,
+            "nombreProducto":"Gel Calypso Fijador Fuerte",
+            "imagenProducto":"https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/c385976bc54d78dff661f3a8d562b253/5/2/52429.jpg",
+            "descripcion":"",
+            "precio": 78,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":8,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":10,
+            "nombreProducto":"Cera En Polvo Golden Moustache Efecto Matte",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_962059-MLU50099607369_052022-F.webp",
+            "descripcion":"",
+            "precio": 350,
+            "femenino":true,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":28,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":11,
+            "nombreProducto":"Aceite para Barba brillante y suave",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_686641-MLU48054352893_102021-F.webp",
+            "descripcion":"",
+            "precio": 359,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":false,
+            "stock":20,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":12,
+            "nombreProducto":"Oleo para Braba Jhony Barber",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_700713-MLU70079574267_062023-F.webp",
+            "descripcion":"",
+            "precio": 490,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":false,
+            "stock":12,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":13,
+            "nombreProducto":"Bálsamo y cepillo para Barba - Set",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_746938-MLU52612611363_112022-F.webp",
+            "descripcion":"",
+            "precio": 590,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":false,
+            "stock":3,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":14,
+            "nombreProducto":"Shampoo para barba y bigote",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_763111-MLU32733123849_112019-F.webp",
+            "descripcion":"",
+            "precio": 270,
+            "femenino":false,
+            "masculino":true,
+            "barba":true,
+            "cabello":false,
+            "stock":55,
+            "cantidadEnCarrito":1
+        },
+        {
+            "id":15,
+            "nombreProducto":"Cera para el cabello en gel Barber Style",
+            "imagenProducto":"https://http2.mlstatic.com/D_NQ_NP_2X_610541-MLU48041981231_102021-F.webp",
+            "descripcion":"",
+            "precio": 350,
+            "femenino":false,
+            "masculino":true,
+            "barba":false,
+            "cabello":true,
+            "stock":33,
+            "cantidadEnCarrito":1
+        }
+    ],
+
+    "promociones": [
+        {
+            "imagenPromo": "./img/promo_1.jpg",
+            "imagenAlt":"Promoción de cortes numero 2, 3 opciones",
+            "infoPromo":"¡Cortes en tendencia a tu elección con un descuento increíble!",
+            "numeroDePromo": 1
+        },
+        {
+            "imagenPromo": "./img/promo_2.jpg",
+            "imagenAlt":"Promoción de cortes numero 2, 3 opciones",
+            "infoPromo":"Tres tipos de corte en promoción para ti.",
+            "numeroDePromo": 2
+        },
+        {
+            "imagenPromo": "./img/promo_3.jpg",
+            "imagenAlt":"Promoción de cortes numero 3, tramiento a cabellos largos",
+            "infoPromo":"Tratamientos para el cabello, largo o corto.",
+            "numeroDePromo": 3
+        },
+        {
+            "imagenPromo": "./img/promo_4.jpg",
+            "imagenAlt":"Promoción de cortes numero 4, tintura a cabellos largos",
+            "infoPromo":"Especial tintura para cabellos largos.",
+            "numeroDePromo": 4
+        },
+        {
+            "imagenPromo": "./img/promo_5.jpg",
+            "imagenAlt":"Promoción de cortes numero 5, tintura a cabellos largos",
+            "infoPromo":"Cortes para cabello largo en promocón, ¡Animate a un cambio!",
+            "numeroDePromo": 5
+        }
+    ]
+}
+

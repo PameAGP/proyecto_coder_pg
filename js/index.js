@@ -1,111 +1,90 @@
-class promocion {
-    constructor(
-        imagenPromo,
-        imagenAlt,
-        infoPromo,
-        numeroDePromo
-    ) {
-        this.imagenPromo = imagenPromo;
-        this.imagenAlt = imagenAlt;
-        this.infoPromo = infoPromo;
-        this.numeroDePromo = numeroDePromo;
-    }
+
+let promociones = [];
+
+function traerPromos() {
+  const URLJSON = '../pseudo-BD.json';
+  fetch(URLJSON)
+    .then((resultado) => resultado.json())
+    .then((promos) => {
+      promociones = promos.promociones
+      console.log (promos.promociones)
+    })
 
 }
 
-const promocion1 = new promocion(
-    './img/promo_1.jpg',
-    'Promoción de cortes número 1, cortes en tendencia',
-    '¡Cortes en tendencia a tu elección con un descuento increíble!',
-    1
-);
+traerPromos();
 
-const promocion2 = new promocion(
-    './img/promo_2.jpg',
-    'Promoción de cortes numero 2, 3 opciones',
-    'Tres tipos de corte en promoción para ti.',
-    2
-);
+const mostrarPromos = () => {
+  return new Promise ((resolve, rejet) => {
+    setTimeout(()=> {
+      resolve(promociones)
+    }, 500)
+  })
+}
 
-const promocion3 = new promocion(
-    './img/promo_3.jpg',
-    'Promoción de cortes numero 3, tramiento a cabellos largos',
-    'Tratamientos para el cabello, largo o corto.',
-    3
-);
+let promoEnCarrusel = document.getElementById('carrusel');
 
-const promocion4 = new promocion(
-    './img/promo_4.jpg',
-    'Promoción de cortes numero 4, tintura a cabellos largos',
-    'Especial tintura para cabellos largos.',
-    4
-);
+mostrarPromos ()
+.then ((resp) => {
+  promociones = resp
+  promoEnCarrusel.innerHTML += `
+  <div class="carousel-item active">
+          <img src=${promociones[0].imagenPromo} class="d-block w-100" alt=${promociones[0].imagenAlt}>
+          <div class="carousel-caption">
+            <a href="./pages/contacto.html">
+              <h5>Promoción ${promociones[0].numeroDePromo}</h5>
+            </a>
+            <p>${promociones[0].infoPromo}</p>
+          </div>
+        </div>
+  `;
 
-const promocion5 = new promocion(
-    './img/promo_5.jpg',
-    'Promoción de cortes numero 5, tintura a cabellos largos',
-    'Cortes para cabello largo en promocón, ¡Animate a un cambio!',
-    5
-);
+for (let carrusel = 1; carrusel <= promociones.length; carrusel++) {
+  promoEnCarrusel.innerHTML += `
+  <div class="carousel-item">
+          <img src=${promociones[carrusel].imagenPromo} class="d-block w-100" alt=${promociones[carrusel].imagenAlt}>
+          <div class="carousel-caption">
+            <a href="./pages/contacto.html">
+              <h5>Promoción ${promociones[carrusel].numeroDePromo}</h5>
+            </a>
+            <p>${promociones[carrusel].infoPromo}</p>
+          </div>
+        </div>
+  `;
+  console.log (promociones[carrusel].imagenAlt)
+}
+})
 
-const promociones = [];
-
-promociones.push(
-    promocion2,
-    promocion3,
-    promocion4,
-    promocion5
-);
-
-console.table(promociones);
 
 encabezadoElegido(headerIndex, secc1, secc3, secc3);
 
 
-let promoEnCarrusel = document.getElementById('carrusel');
-
-promoEnCarrusel.innerHTML += `
-    <div class="carousel-item active">
-            <img src="./img/promo_1.jpg" class="d-block w-100" alt="Promoción de cortes número 1, cortes en tendencia">
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción 1</h5>
-              </a>
-              <p>¡Cortes en tendencia a tu elección con un descuento increíble!</p>
-            </div>
-          </div>
-    `;
-
-for (const carrusel of promociones) {
-    promoEnCarrusel.innerHTML += `
-    <div class="carousel-item">
-            <img src=${carrusel.imagenPromo} class="d-block w-100" alt=${carrusel.imagenAlt}>
-            <div class="carousel-caption">
-              <a href="./pages/contacto.html">
-                <h5>Promoción ${carrusel.numeroDePromo}</h5>
-              </a>
-              <p>${carrusel.infoPromo}</p>
-            </div>
-          </div>
-    `;
-}
-
-console.table(productosDestacados);
-
 let destacados = document.getElementById('destacados');
 
-for (const producto of productosDestacados) {
-    destacados.innerHTML += `
-        <div class="card">
-          <img src=${producto.imagenProducto} class="card-img-top" alt=${producto.nombreProducto}>
-          <div class="card-body">
-            <h5 class="card-title">$ ${producto.precio}<br>${producto.nombreProducto}</h5>
-            <p class="card-text">${producto.descripcion}</p>
-            <a href="./pages/productos.html"
-              target="" class="btn btn-primary">Comprar</a>
+let productosDestacados = [];
+
+llamarInventario()
+  .then((resp) => {
+    inventario = resp
+    productosDestacados.push(
+      inventario[4],
+      inventario[2],
+      inventario[6]
+    )
+    console.table(productosDestacados);
+    for (const producto of productosDestacados) {
+      destacados.innerHTML += `
+          <div class="card card-animacion">
+            <img src=${producto.imagenProducto} class="card-img-top" alt=${producto.nombreProducto}>
+            <div class="card-body">
+              <h5 class="card-title">$ ${producto.precio}<br>${producto.nombreProducto}</h5>
+              <p class="card-text">${producto.descripcion}</p>
+              <a href="./pages/productos.html"
+                target="" class="btn btn-primary">Comprar</a>
+            </div>
           </div>
-        </div>
-    `; 
-}
+      `; 
+  }
+  })
 
 footerElegido(footerIndex, secc3, secc1);
