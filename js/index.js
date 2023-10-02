@@ -18,7 +18,7 @@ const mostrarPromos = () => {
   return new Promise ((resolve, rejet) => {
     setTimeout(()=> {
       resolve(promociones)
-    }, 500)
+    }, 2000)
   })
 }
 
