@@ -25,33 +25,33 @@
 
     <section class="pelu container bac-color">
 
-      <div class="bac-color sesion" action="">
+      <form class="bac-color sesion" action="">
 
         <h3 class="sesion-title">Nuevo usuario</h3>
 
         <div>
           <label for="usuario">Nombre de usuario: </label> <br>
           <input type="name" id="usuarioR" placeholder="Ej: Pepe123" maxlength="15">
-          <p color="red" class="texto-justificado" id="usuarioNoValido"></p>
+          <p id="usuarioNoValido"></p>
         </div>
 
         <div>
           <label for="nombreUsuario">Nombre: </label> <br>
           <input type="name" id="nombreUsuarioR" placeholder="Ej: José" maxlength="20">
-          <p class="texto-justificado" id="nombreNoValido"></p>
+          <p id="nombreNoValido"></p>
         </div>
 
         <div>
           <label for="apellidoUsuario">Apellido: </label> <br>
           <input type="lastname" id="apellidoUsuarioR" placeholder="Ej: López" maxlength="20">
-          <p class="texto-justificado" id="apellidoNoValido"></p>
+          <p id="apellidoNoValido"></p>
         </div>
 
 
         <div>
           <label for="">Fecha de nacimiento</label> <br>
           <input id="bdayR" type="date">
-          <p class="texto-justificado" id="fechaNacimientoNoValida"></p>
+          <p id="fechaNacimientoNoValida"></p>
         </div>
 
         <div>
@@ -68,19 +68,19 @@
         <div>
           <label for="email">Email:</label> <br>
           <input type="email" id="emailR" placeholder="ejemplo@correo">
-          <p class="texto-justificado" id="correoNoValido"></p>
+          <p id="correoNoValido"></p>
         </div>
 
         <div>
           <label for="passR">Contraseña: </label><br>
           <input type="password" id="passR" placeholder="*******"> <br>
-          <p class="texto-justificado" id="passCoincidence"></p>
+          <p id="passCoincidence"></p>
         </div>
 
         <div>
           <label for="passR2">Repita la contraseña</label><br>
           <input type="password" id="passR2" placeholder="*******"><br>
-          <p class="texto-justificado" id="passCoincidence"></p>
+          <p id="passCoincidence"></p>
         </div>
 
         <div class="check-sb">
@@ -101,9 +101,9 @@
           <!-- <button id="registrarse" type="submit" value="Registrarse" class="btn btn-primary"> -->
         </div>
 
-      </div>
+      </form>
 
-      <div class="bac-color sesion-2" action="">
+      <form class="bac-color sesion-2" action="">
         <h3>Iniciar Sesion</h3>
 
         <div class="user">
@@ -121,7 +121,7 @@
           <input id="inicioSesion" type="submit" value="Iniciar Sesión" class="btn btn-primary btn-sesion">
         </div>
 
-      </div>
+      </form>
 
       <section class="sesion-3">
         <h3> ¿Por qué registrarme? </h3>

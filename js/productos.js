@@ -1,14 +1,7 @@
-
-
 console.table(inventario);
-
-// console.log( carro.length );
-
-// console.table(carro);
 
 const finalCarrito = document.getElementById('finalizar-carrito');
 const carritoIcono = document.getElementById('cargar-carrito');
-
 
 //-------------------MOSTRANDO QUE EL CARRO ESTA VACIO O BOTONES DE CARRITO ---------------------------
 if (carro.length == 0) {
@@ -181,7 +174,6 @@ botonBuscar.addEventListener('click', () => {
 
       sectionProductos.innerHTML='';
     mostrarProductos(buscado);
-
-
+    
 });
 

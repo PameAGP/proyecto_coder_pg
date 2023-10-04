@@ -27,6 +27,7 @@
 // console.dir(seccionHeader);
 
 // seccionHeader.style.background='grey';
+let sesionIniciada = JSON.parse(localStorage.getItem('sesionIniciada')) || [];
 
 function traerProductosJSON() {
   const URLJSON = '../pseudo-BD.json';
@@ -75,7 +76,10 @@ function encabezadoElegido(elegido, op1, op2, op3) {
   elegido.innerHTML = `
     <nav class="navbar navbar-expand-md navbar-dark bg-black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html">Peluquería Nico's</a>
+      <div class="container containerBC">
+      <p id="bienvenidaCliente" class='texto-blanco bienvenidoCliente'></p>
+      </div>
+      <a class="navbar-brand" href="${op1}index.html">Peluquería Nico's</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -110,6 +114,7 @@ function encabezadoElegido(elegido, op1, op2, op3) {
               <ul class="dropdown-menu bg-black ">
                 <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Iniciar Sesión</a></li>
                 <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Registrarme</a></li>
+                <li><a id="cerrarSesion" class="dropdown-item negrita texto-blanco" >Cerrar Sesión</a></li>
               </ul>
             </li>
             
@@ -121,6 +126,23 @@ function encabezadoElegido(elegido, op1, op2, op3) {
   </nav>
     `;
 
+  let sd = document.getElementById('cerrarSesion');
+
+  sd.addEventListener('click', cierraSesion)
+
+  if (sesionIniciada.username == null) {
+    document.getElementById('bienvenidaCliente').innerText = 'Sesión no iniciada.';
+  } else {
+    document.getElementById('bienvenidaCliente').innerText = `
+        Bienvenido/a ${sesionIniciada.firstName} ${sesionIniciada.lastName}
+        `;
+  }
+
+}
+
+function cierraSesion() {
+  localStorage.setItem('sesionIniciada', JSON.stringify(sesionIniciada=[]));
+  location.reload();
 }
 
 function footerElegido(elegido, op1, op2) {
@@ -167,6 +189,8 @@ function footerElegido(elegido, op1, op2) {
     </div>
 `;
 }
+
+console.log(sesionIniciada.username)
 
 
 
@@ -425,18 +449,18 @@ const eliminaDeCarrito = (idEli) => {
 
 
 
-  
 
-  // llamarInventario()
-  // .then((resp) => {
-  //   inventario = resp
-  //   productosDestacados.push(
-  //     inventario[4],
-  //     inventario[3],
-  //     inventario[6]
-  //   )
-  //   console.log(productosDestacados);
-  // })
+
+// llamarInventario()
+// .then((resp) => {
+//   inventario = resp
+//   productosDestacados.push(
+//     inventario[4],
+//     inventario[3],
+//     inventario[6]
+//   )
+//   console.log(productosDestacados);
+// })
 
 const sectionProductos = document.getElementById('tarjetasProductos');
 
@@ -602,7 +626,7 @@ function cartelNoMasStock(producto) {
   })
 }
 
-function cartelConAdvertencia (titleError, descripcionError){
+function cartelConAdvertencia(titleError, descripcionError) {
   Swal.fire({
     icon: 'error',
     title: titleError,

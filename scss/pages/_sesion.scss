@@ -65,6 +65,10 @@
                 text-align: left;
             }
 
+            p {
+                text-align: left;
+            }
+
         }
 
         .check-sb {
@@ -104,6 +108,7 @@
 
         &-2{
             display: grid;
+            height: 320px;
 
             & h3{
                 align-self: center;
