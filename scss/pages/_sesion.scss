@@ -8,6 +8,10 @@
     div{
         padding: 2%;
         height: 100%;
+    
+        & p {
+            color: red;
+        }
     }
     &-2{
         padding: 3%;

@@ -402,6 +402,9 @@ footer p {
   padding: 2%;
   height: 100%;
 }
+.sesion div p {
+  color: red;
+}
 .sesion-2 {
   padding: 3%;
 }

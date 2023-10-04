@@ -35,6 +35,7 @@ function traerProductosJSON() {
     .then((pBD) => {
       inventario = pBD.productos
     })
+    .catch((error) => console.log('Error', error));
 }
 
 traerProductosJSON();
@@ -55,85 +56,6 @@ llamarInventario()
     inventario = resp
     mostrarProductos(inventario)
   })
-
-// class usuario {
-//   constructor(
-//     userName,
-//     nombreUsuario,
-//     apellidoUsuario,
-//     passUsuario,
-//     fechaNacimiento,
-//     genero,
-//     email,
-//     promo,
-//     info
-//   ) {
-//     this.userName = userName;
-//     this.nombreUsuario = nombreUsuario;
-//     this.apellidoUsuario = apellidoUsuario;
-//     this.passUsuario = passUsuario;
-//     this.fechaNacimiento = fechaNacimiento;
-//     this.genero = genero;
-//     this.email = email;
-//     this.promo = promo;
-//     this.info = info;
-//   }
-// }
-
-// const usuarios = [];
-
-// const usuario1 = new usuario(
-//   'Pepe123',
-//   'José',
-//   'Gomez',
-//   12345,
-//   '15/4/95',
-//   'masculino',
-//   'pepeelgroso123@hotmail.com',
-//   true,
-//   true
-// );
-
-// usuarios.push(usuario1);
-
-// console.log(usuarios);
-
-// // ----------------Validaciones---------------------
-
-// const inputNombre = document.getElementById('usuario');
-// const inputPass = document.getElementById('pass');
-
-// inputNombre.onkeyup = () => {
-//   if (inputNombre.value.length < 3) {
-//     inputNombre.style.color = 'red';
-//   }
-//   else {
-//     inputNombre.style.color = 'black';
-//   }
-// }
-
-// inputPass.onkeyup = () => {
-//   if (inputPass.value.length < 6) {
-//     inputPass.style.color = 'red';
-//   }
-//   else {
-//     inputPass.style.color = 'black';
-//   }
-// }
-
-// const formulario = document.getElementById('inicioSesion');
-
-// formulario.addEventListener('submit', validar);
-
-// function validar(evento) {
-//   if (inputNombre.value == '' || inputPass.value == '') {
-//     evento.preventDefault();
-//     alert('Usuario o contraseña invalida');
-//   }
-
-// }
-
-
 
 //------------------------ENCABEZADO Y PIE 🧑🦶---------------------------------
 
@@ -676,6 +598,15 @@ function cartelNoMasStock(producto) {
     icon: 'error',
     title: '¡Sin Stock!',
     text: 'No hay más stock del producto seleccionado: ' + producto.nombreProducto,
+    // footer: '<a href="">Why do I have this issue?</a>'
+  })
+}
+
+function cartelConAdvertencia (titleError, descripcionError){
+  Swal.fire({
+    icon: 'error',
+    title: titleError,
+    text: descripcionError
     // footer: '<a href="">Why do I have this issue?</a>'
   })
 }

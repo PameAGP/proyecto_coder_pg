@@ -1,1 +1,90 @@
-fef
+
+async function traerUsuarios() {
+    const URLPOST = 'https://jsonplaceholder.typicode.com/users';
+    const respond = await fetch(URLPOST);
+
+    const recived = await respond.json();
+    usuariosRegistrados = recived;
+    console.table(usuariosRegistrados);
+}
+
+traerUsuarios();
+
+// function enviarUsuario(p1, p2, p3, p4, p5, p6, p7, p8, p9) {
+//     fetch('https://jsonplaceholder.typicode.com/users/posts', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({
+//             username: p1,
+//             firstName: p2,
+//             lastName: p3,
+//             birthDate: p4,
+//             gender: p5,
+//             email: p6,
+//             promo: p7,
+//             info: p8,
+//             password: p9
+//         })
+//     })
+//         .then(res => res.json())
+//         .then(console.table);
+// }
+
+function enviarUsuario (p1, p2, p3, p4, p5){
+    fetch('https://jsonplaceholder.typicode.com/users/1/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    username: p1,
+    name: p2 + p3,
+    email: p4,
+    zipcode: p5,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+}
+
+enviarUsuario ('Bla bla', 'Gonzalo', 'Gomez', 'gomezgomez@correo', '1234569');
+
+// enviarUsuario('usuarioPrueba', 'Pablo', 'Guerrero', '06/30/2002', 'male', 'pablitogroso@hotmail.com', true, true, '1234567');
+
+const validación = (e) => {
+  e.preventDefault();
+  let enviar = false;
+  let emailVálido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const nombreDeUsuario = document.getElementById('usuario');
+  const direcciónEmail = document.getElementById('email');
+  if (nombreDeUsuario.value === "") {
+    alert("Por favor, escribe tu nombre de usuario.");
+    usuario.focus();
+    enviar = true;
+  }
+
+  if (direcciónEmail.value === "") {
+    alert("Por favor, escribe tu correo electrónico");
+    email.focus();
+    enviar = true;
+  }
+
+  if (!emailVálido.test(email.value)) {
+    alert("Por favor, escribe un correo electrónico válido");
+    emailAddress.focus();
+    enviar = true;
+  }
+
+   if (enviar){
+    alert('NOOOO')
+   } else {
+    op();
+   }
+  //Se pueden enviar los datos del formulario al servidor
+}
+
+function op (){
+    alert('Así si')
+}
+
+btnEnviar.addEventListener('click', validación);
