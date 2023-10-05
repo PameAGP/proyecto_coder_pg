@@ -1,32 +1,3 @@
-// let ingreso = prompt("¿Cuenta con usuario? S/N");
-
-// if (ingreso.toLowerCase() == 's') {
-
-//     let usuarioIngresando = prompt("Ingrese nombreProducto de usuario:");
-//     let pass = prompt('Ingrese contraseña:');
-
-//     while (usuarioIngresando != 'cliente' || pass != 'cliente') {
-
-//         alert("Usuario y/o contraseña incorrecta.");
-//         usuarioIngresando = prompt("Ingrese nombreProducto de usuario:");
-//         pass = prompt('Ingrese contraseña:');
-
-//     }
-//     user = "cliente";
-//     alert('¡Bienvenido, ' + usuarioIngresando + '!');
-
-// } else if (ingreso.toLowerCase() == 'n') {
-//     user = "no";
-//     alert('Bienvenido, cliente no registrado');
-// } else {
-//     user = "no";
-//     alert('Error');
-// }
-
-// let seccionHeader = document.getElementById('mainID');
-// console.dir(seccionHeader);
-
-// seccionHeader.style.background='grey';
 let sesionIniciada = JSON.parse(localStorage.getItem('sesionIniciada')) || [];
 
 function traerProductosJSON() {
@@ -238,7 +209,6 @@ function finalizarOvaciar() {
   let finalizarCarro = document.getElementById('finalizar-carro');
   finalizarCarro.addEventListener('click', () => {
     localStorage.setItem('carroRecuperado', JSON.stringify(carro = []));
-    finalizarCompra();
     setTimeout("redirecciona()", 2000);
   });
 }
@@ -247,15 +217,15 @@ function redirecciona() {
   location.href = './productos.html';
 }
 
-function finalizarCompra() {
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: '¡Gracias por tu compra!',
-    showConfirmButton: false,
-    timer: 1500
-  })
-}
+// function finalizarCompra() {
+//   Swal.fire({
+//     position: 'top-end',
+//     icon: 'success',
+//     title: '¡Gracias por tu compra!',
+//     showConfirmButton: false,
+//     timer: 1500
+//   })
+// }
 
 //----------------- Función Mostrar Carrito  🛒💾🛒---------------
 function carritoMostrar(listaCarrito) {
@@ -300,13 +270,28 @@ function carritoMostrar(listaCarrito) {
 
   }
 
-  const total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito, 0);
+  let total = carro.reduce((accu, suma) => accu + suma.precio * suma.cantidadEnCarrito, 0);
+  let iva = total * 0.20;
+  let totalConDescuento = total - iva;
 
   if (carro.length == 0) {
-    document.getElementById('el-total').innerText = '';
+    document.getElementById('el-total').innerHTML= '';
   } else {
-    document.getElementById('el-total').innerText = 'Total: $' + total;
-  }
+    if(sesionIniciada.username== null){
+      document.getElementById('el-total').innerHTML= `
+      <h5>Total: $ ${total}</h5>
+      <h5>Sin descuento.</h5>
+      `;
+    } else {
+      document.getElementById('el-total').innerHTML= `
+      <h5>Total: $ ${total}</h5>
+      <h5>Descuento: $ ${iva}</h5>
+      <h5>Precio final: $ ${totalConDescuento}</h5>
+      `;
+    }
+
+    }
+    
 
 
 
@@ -447,25 +432,9 @@ const eliminaDeCarrito = (idEli) => {
 
 // ---------------MOSTRAR PRODUCTOS EN PANTALLA 📺---------------
 
-
-
-
-
-// llamarInventario()
-// .then((resp) => {
-//   inventario = resp
-//   productosDestacados.push(
-//     inventario[4],
-//     inventario[3],
-//     inventario[6]
-//   )
-//   console.log(productosDestacados);
-// })
-
 const sectionProductos = document.getElementById('tarjetasProductos');
 
 const mostrarProductos = (listadoProductos) => {
-  // function mostrarProductos(listadoProductos) {
   sectionProductos.innerHTML = '';
   for (const product of listadoProductos) {
     sectionProductos.innerHTML += `
@@ -559,7 +528,7 @@ llamarInventario()
         prodMasculinos.push(inventario[i]);
       }
     }
-    console.table(prodMasculinos);
+    console.log(prodMasculinos);
     //---------------Filtra productos solo de barba 👨‍🦱
     for (let i = 0; i < inventario.length; i++) {
       if (inventario[i].barba == true) {
@@ -600,7 +569,7 @@ function precioMaxAs(array, precioMaximo, precioMinimo) {
 
 }
 
-//--------------------FUNCION Cartel agregado al carrito 💬💬➕➕------------------
+//--------------------FUNCIONES con Carteles 💬💬➕➕------------------
 
 function cartelAgregadoCarrito(producto) {
   const Toast = Swal.mixin({
@@ -632,6 +601,17 @@ function cartelConAdvertencia(titleError, descripcionError) {
     title: titleError,
     text: descripcionError
     // footer: '<a href="">Why do I have this issue?</a>'
+  })
+}
+
+function cartelFeliz (titulo, descripcion){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: titulo,
+    text: descripcion,
+    showConfirmButton: false,
+    timer: 1500
   })
 }
 

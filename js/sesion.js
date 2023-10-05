@@ -1,38 +1,101 @@
+// async function traerUsuarios() {
+//     const URLUSERS = 'https://dummyjson.com/users';
+//     const respond = await fetch(URLUSERS);
+
+//     const recived = await respond.json();
+//     usuariosRegistrados = recived.users;
+//     // console.table(usuariosRegistrados);
+// }
+
+// traerUsuarios();
 
 let usuariosRegistrados = [];
 let usuarioLocal = JSON.parse(localStorage.getItem('usuariosR')) || [];
 
-async function traerUsuarios() {
-    const URLUSERS = 'https://dummyjson.com/users';
-    const respond = await fetch(URLUSERS);
-
-    const recived = await respond.json();
-    usuariosRegistrados = recived.users;
-    // console.table(usuariosRegistrados);
-}
-
-traerUsuarios();
+// ------------------Trae usuarios desde API JSON dummyjson.com
 
 let usuarioT = [];
 
-
-async function buscaUsuario(usuario, valor) {
-    const URLUSERS = 'https://dummyjson.com/users/filter?key='+usuario+'&value='+valor;
-    const respond = await fetch(URLUSERS);
-
-    const recived = await respond.json();
-    usuarioT = recived.users;
-    console.log(usuarioT);
-    if(usuarioT.length == 0){
-        console.log('Nulo');
-    } else {
-        console.table(usuarioT);
-    }
+function traerUsuariosBD() {
+    const URLJSON = 'https://dummyjson.com/users'
+    fetch(URLJSON)
+        .then((resultado) => resultado.json())
+        .then((pBD) => {
+            usuarioT = pBD.users
+        })
+        .catch((error) => console.log('Error', error));
 }
 
-// buscaUsuario('username', 'hbingley1');
-buscaUsuario('username', '515654');
+traerUsuariosBD();
 
+const llamarUsuarios = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(usuarioT)
+        }, 500)
+    })
+}
+
+//---------------------INICIO DE SESIÓN-------------------
+llamarUsuarios()
+    .then((resp) => {
+        usuarioT = resp
+        console.log(usuarioT);
+
+        function inicioSesion(evento) {
+
+            const inputNombre = document.getElementById('usuario').value;
+            const inputPass = document.getElementById('pass').value;
+            sesionNo = true;
+
+            if (sesionIniciada.length != 0) {
+                evento.preventDefault();
+                cartelConAdvertencia('Error', 'Ya existe una sesión iniciada.');
+            } else {
+                const seleccionado = usuarioLocal.find((elemento) => elemento.username == inputNombre);
+
+                const seleccionado2 = usuarioT.find((elemento) => elemento.username == inputNombre);
+
+                if (inputNombre == "" || inputPass == "") {
+                    evento.preventDefault();
+                    cartelConAdvertencia('Error al iniciar.', 'Campo/s vacío/s.')
+                }
+
+                if (seleccionado == null && seleccionado2 == null) {
+                    evento.preventDefault();
+                    cartelConAdvertencia('Usuario no encontrado', 'Lo sentimos, el nombre de usuario ingresado no existe.')
+                } else if (seleccionado2 == null){
+                    console.log('Se alló usuario: ' + seleccionado.username);
+                    if (seleccionado.password == inputPass) {
+                        console.log('Contraseña correcta');
+                        localStorage.setItem('sesionIniciada', JSON.stringify(seleccionado));
+                        location.reload();
+                    } else {
+                        evento.preventDefault();
+                        cartelConAdvertencia('Contraseña incorrecta.');
+                    }
+                } else if (seleccionado == null) {
+                    console.log('Se alló usuario: ' + seleccionado2.username);
+                    if (seleccionado2.password == inputPass) {
+                        console.log('Contraseña correcta');
+                        localStorage.setItem('sesionIniciada', JSON.stringify(seleccionado2));
+                        location.reload();
+                    } else {
+                        evento.preventDefault();
+                        cartelConAdvertencia('Contraseña incorrecta.');
+                    }
+                }
+             }
+        }
+
+        const formulario = document.getElementById('inicioSesion');
+
+        formulario.addEventListener('click', inicioSesion);
+
+
+    })
+
+//--------------------Función que envía usuario a la BD.
 function enviarUsuario(p1, p2, p3, p4, p5, p6, p7, p8, p9) {
     fetch('https://dummyjson.com/users/add', {
         method: 'POST',
@@ -51,6 +114,8 @@ function enviarUsuario(p1, p2, p3, p4, p5, p6, p7, p8, p9) {
     })
         .then(res => res.json())
 }
+
+//-------------------------Formulario de registro, guarda en Local Storage, simula subida a Base de Datos-------------------------
 
 const botonR = document.getElementById('registrarse');
 
@@ -157,15 +222,15 @@ const validarRegistro = (e) => {
     if (rechazar) {
         cartelConAdvertencia('Error al registrar', 'Revise los campos, por favor.')
     } else {
-        guardarDatos()
+        guardarDatos();
+        cartelFeliz('¡Gracias por registrase!', 'Su registro ha sido exitoso.')
     }
 
 }
 
-
-
 botonR.addEventListener('click', validarRegistro);
 
+//---------------------Guarda los datos
 function guardarDatos() {
 
     const userR = document.getElementById('usuarioR').value;
@@ -237,42 +302,7 @@ class usuarioL {
     }
 }
 
-function inicioSesion(evento) {
-
-    const inputNombre = document.getElementById('usuario').value;
-    const inputPass = document.getElementById('pass').value;
-    sesionNo = true;
-
-    if (sesionIniciada.length != 0) {
-        evento.preventDefault();
-        cartelConAdvertencia('Error', 'Ya existe una sesión iniciada.');
-    } else {
-        const seleccionado = usuarioLocal.find((elemento) => elemento.username == inputNombre);
-
-        console.log(seleccionado);
-
-        if (inputNombre == "" || inputPass == "") {
-            evento.preventDefault();
-            cartelConAdvertencia('Error al iniciar.', 'Campo/s vacío/s.')
-        }
-
-        if (seleccionado == null) {
-            evento.preventDefault();
-            console.log('Usuario no allado');
-        } else {
-            console.log('Se alló usuario: ' + seleccionado.username);
-            if (seleccionado.password == inputPass) {
-                console.log('Contraseña correcta');
-                localStorage.setItem('sesionIniciada', JSON.stringify(seleccionado));
-            } else {
-                evento.preventDefault();
-                cartelConAdvertencia('Contraseña incorrecta.');
-            }
-        }
-    }
-
-}
-
+//---------------------Validaciones en el inicio de sesión 
 const inputNombre = document.getElementById('usuario');
 const inputPass = document.getElementById('pass');
 
@@ -294,6 +324,3 @@ inputPass.onkeyup = () => {
     }
 }
 
-const formulario = document.getElementById('inicioSesion');
-
-formulario.addEventListener('click', inicioSesion);
