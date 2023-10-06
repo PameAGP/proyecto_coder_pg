@@ -82,10 +82,8 @@ function encabezadoElegido(elegido, op1, op2, op3) {
                 aria-expanded="false">
                 Usuario
               </a>
-              <ul class="dropdown-menu bg-black ">
-                <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Iniciar Sesión</a></li>
-                <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Registrarme</a></li>
-                <li><a id="cerrarSesion" class="dropdown-item negrita texto-blanco" >Cerrar Sesión</a></li>
+              <ul id="sesionOp" class="dropdown-menu bg-black ">
+                
               </ul>
             </li>
             
@@ -97,16 +95,25 @@ function encabezadoElegido(elegido, op1, op2, op3) {
   </nav>
     `;
 
-  let sd = document.getElementById('cerrarSesion');
 
-  sd.addEventListener('click', cierraSesion)
+
 
   if (sesionIniciada.username == null) {
     document.getElementById('bienvenidaCliente').innerText = 'Sesión no iniciada.';
+    document.getElementById('sesionOp').innerHTML = `
+    <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Iniciar Sesión</a></li>
+    <li><a class="dropdown-item negrita texto-blanco" href="${op3}sesion.html">Registrarme</a></li>
+    `;
   } else {
     document.getElementById('bienvenidaCliente').innerText = `
         Bienvenido/a ${sesionIniciada.firstName} ${sesionIniciada.lastName}
         `;
+    document.getElementById('sesionOp').innerHTML =`
+    <li><a id="cerrarSesion" class="dropdown-item negrita texto-blanco" >Cerrar Sesión</a></li>
+    `;
+
+    let sd = document.getElementById('cerrarSesion');
+    sd.addEventListener('click', cierraSesion)
   }
 
 }
@@ -208,6 +215,7 @@ function finalizarOvaciar() {
 
   let finalizarCarro = document.getElementById('finalizar-carro');
   finalizarCarro.addEventListener('click', () => {
+    cartelFeliz('¡Gracias por su compra!', 'Una persona se porndrá en contacto con usted para coordinar la entrega.')
     localStorage.setItem('carroRecuperado', JSON.stringify(carro = []));
     setTimeout("redirecciona()", 2000);
   });
@@ -217,15 +225,6 @@ function redirecciona() {
   location.href = './productos.html';
 }
 
-// function finalizarCompra() {
-//   Swal.fire({
-//     position: 'top-end',
-//     icon: 'success',
-//     title: '¡Gracias por tu compra!',
-//     showConfirmButton: false,
-//     timer: 1500
-//   })
-// }
 
 //----------------- Función Mostrar Carrito  🛒💾🛒---------------
 function carritoMostrar(listaCarrito) {
@@ -280,7 +279,7 @@ function carritoMostrar(listaCarrito) {
     if(sesionIniciada.username== null){
       document.getElementById('el-total').innerHTML= `
       <h5>Total: $ ${total}</h5>
-      <h5>Sin descuento.</h5>
+      <h5>No aplica descuento.</h5>
       `;
     } else {
       document.getElementById('el-total').innerHTML= `

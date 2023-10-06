@@ -1,14 +1,3 @@
-// async function traerUsuarios() {
-//     const URLUSERS = 'https://dummyjson.com/users';
-//     const respond = await fetch(URLUSERS);
-
-//     const recived = await respond.json();
-//     usuariosRegistrados = recived.users;
-//     // console.table(usuariosRegistrados);
-// }
-
-// traerUsuarios();
-
 let usuariosRegistrados = [];
 let usuarioLocal = JSON.parse(localStorage.getItem('usuariosR')) || [];
 
@@ -64,7 +53,7 @@ llamarUsuarios()
                 if (seleccionado == null && seleccionado2 == null) {
                     evento.preventDefault();
                     cartelConAdvertencia('Usuario no encontrado', 'Lo sentimos, el nombre de usuario ingresado no existe.')
-                } else if (seleccionado2 == null){
+                } else if (seleccionado2 == null) {
                     console.log('Se alló usuario: ' + seleccionado.username);
                     if (seleccionado.password == inputPass) {
                         console.log('Contraseña correcta');
@@ -85,13 +74,81 @@ llamarUsuarios()
                         cartelConAdvertencia('Contraseña incorrecta.');
                     }
                 }
-             }
+            }
         }
 
         const formulario = document.getElementById('inicioSesion');
 
         formulario.addEventListener('click', inicioSesion);
 
+        const validarRegistro = (e) => {
+            e.preventDefault();
+            let rechazar = false;
+            let emailAceptable = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let userAceptable = / /;
+
+            const seleccionado = usuarioT.find((elemento) => elemento.username == userR.value);
+            const seleccionado2 = usuarioLocal.find((elemento) => elemento.username == userR.value);
+
+            if (userR.value === "" || userAceptable.test(userR.value)) {
+                document.getElementById('usuarioNoValido').innerText = 'Nombre de usuario no válido';
+                rechazar = true;
+            } else if (seleccionado == null && seleccionado2 == null) {
+                document.getElementById('usuarioNoValido').innerText = '';
+            } else {
+                document.getElementById('usuarioNoValido').innerText = 'Nombre de usuario en uso.';
+                rechazar = true;
+            }
+
+            if (nameR.value === "" || userAceptable.test(nameR.value)) {
+                document.getElementById('nombreNoValido').innerText = 'Nombre no válido';
+                rechazar = true;
+            } else {
+                document.getElementById('nombreNoValido').innerText = '';
+            }
+
+            if (lastnameR.value === "" || userAceptable.test(lastnameR.value)) {
+                document.getElementById('apellidoNoValido').innerText = 'Apellido no válido';
+                rechazar = true;
+            } else {
+                document.getElementById('apellidoNoValido').innerText = '';
+            }
+
+            if (bdayR.value === "") {
+                document.getElementById('fechaNacimientoNoValida').innerText = 'Ingrese fecha';
+                rechazar = true;
+            } else {
+                document.getElementById('fechaNacimientoNoValida').innerText = '';
+            }
+
+            if (passR.value === "" || passR2.value === "") {
+                document.getElementById('passCoincidence').innerText = 'Ingrese una contraseña';
+                rechazar = true;
+            } else if (passR.value != passR2.value) {
+                document.getElementById('passCoincidence').innerText = 'Las contraseñas no coinciden';
+                rechazar = true;
+            } else if (passR.value.length < 6) {
+                document.getElementById('passCoincidence').innerText = 'Contraseña muy corta';
+                rechazar = true;
+            }
+
+            if (!emailAceptable.test(emailR.value)) {
+                document.getElementById('correoNoValido').innerText = 'Email no válido';
+                rechazar = true;
+            } else {
+                document.getElementById('correoNoValido').innerText = '';
+            }
+
+            if (rechazar) {
+                cartelConAdvertencia('Error al registrar', 'Revise los campos, por favor.')
+            } else {
+                guardarDatos();
+                cartelFeliz('¡Gracias por registrase!', 'Su registro ha sido exitoso.')
+            }
+
+        }
+
+        botonR.addEventListener('click', validarRegistro);
 
     })
 
@@ -166,69 +223,6 @@ passR2.onkeyup = () => {
         document.getElementById('passCoincidence').innerText = '';
     }
 }
-
-const validarRegistro = (e) => {
-    e.preventDefault();
-    let rechazar = false;
-    let emailAceptable = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let userAceptable = / /;
-
-    if (userR.value === "" || userAceptable.test(userR.value)) {
-        document.getElementById('usuarioNoValido').innerText = 'Nombre de usuario no válido';
-        rechazar = true;
-    } else {
-        document.getElementById('usuarioNoValido').innerText = '';
-    }
-
-    if (nameR.value === "" || userAceptable.test(nameR.value)) {
-        document.getElementById('nombreNoValido').innerText = 'Nombre no válido';
-        rechazar = true;
-    } else {
-        document.getElementById('nombreNoValido').innerText = '';
-    }
-
-    if (lastnameR.value === "" || userAceptable.test(lastnameR.value)) {
-        document.getElementById('apellidoNoValido').innerText = 'Apellido no válido';
-        rechazar = true;
-    } else {
-        document.getElementById('apellidoNoValido').innerText = '';
-    }
-
-    if (bdayR.value === "") {
-        document.getElementById('fechaNacimientoNoValida').innerText = 'Ingrese fecha';
-        rechazar = true;
-    } else {
-        document.getElementById('fechaNacimientoNoValida').innerText = '';
-    }
-
-    if (passR.value === "" || passR2.value === "") {
-        document.getElementById('passCoincidence').innerText = 'Ingrese una contraseña';
-        rechazar = true;
-    } else if (passR.value != passR2.value) {
-        document.getElementById('passCoincidence').innerText = 'Las contraseñas no coinciden';
-        rechazar = true;
-    } else if (passR.value.length < 6) {
-        document.getElementById('passCoincidence').innerText = 'Contraseña muy corta';
-        rechazar = true;
-    }
-
-    if (!emailAceptable.test(emailR.value)) {
-        document.getElementById('correoNoValido').innerText = 'Email no válido';
-        rechazar = true;
-    } else {
-        document.getElementById('correoNoValido').innerText = '';
-    }
-
-    if (rechazar) {
-        cartelConAdvertencia('Error al registrar', 'Revise los campos, por favor.')
-    } else {
-        guardarDatos();
-        cartelFeliz('¡Gracias por registrase!', 'Su registro ha sido exitoso.')
-    }
-
-}
-
-botonR.addEventListener('click', validarRegistro);
 
 //---------------------Guarda los datos
 function guardarDatos() {
