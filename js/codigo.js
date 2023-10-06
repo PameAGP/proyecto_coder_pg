@@ -56,8 +56,7 @@ function encabezadoElegido(elegido, op1, op2, op3) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <div class="offcanvas-header bg-black">
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body bg-black">
@@ -94,9 +93,6 @@ function encabezadoElegido(elegido, op1, op2, op3) {
     </div>
   </nav>
     `;
-
-
-
 
   if (sesionIniciada.username == null) {
     document.getElementById('bienvenidaCliente').innerText = 'Sesión no iniciada.';
