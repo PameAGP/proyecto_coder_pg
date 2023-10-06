@@ -280,8 +280,8 @@ function carritoMostrar(listaCarrito) {
     } else {
       document.getElementById('el-total').innerHTML= `
       <h5>Total: $ ${total}</h5>
-      <h5>Descuento: $ ${iva}</h5>
-      <h5>Precio final: $ ${totalConDescuento}</h5>
+      <h5>Descuento: $ ${iva.toFixed(2)}</h5>
+      <h5>Precio final: $ ${totalConDescuento.toFixed(2)}</h5>
       `;
     }
 
