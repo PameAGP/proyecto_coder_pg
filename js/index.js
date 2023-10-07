@@ -7,7 +7,6 @@ function traerPromos() {
     .then((resultado) => resultado.json())
     .then((promos) => {
       promociones = promos.promociones
-      console.log (promos.promociones)
     })
 
 }
@@ -51,7 +50,6 @@ for (let carrusel = 1; carrusel <= promociones.length; carrusel++) {
           </div>
         </div>
   `;
-  console.log (promociones[carrusel].imagenAlt)
 }
 })
 
@@ -71,7 +69,7 @@ llamarInventario()
       inventario[2],
       inventario[6]
     )
-    console.table(productosDestacados);
+
     for (const producto of productosDestacados) {
       destacados.innerHTML += `
           <div class="card card-animacion">

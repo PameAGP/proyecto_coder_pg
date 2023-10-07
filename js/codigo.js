@@ -164,10 +164,6 @@ function footerElegido(elegido, op1, op2) {
 `;
 }
 
-console.log(sesionIniciada.username)
-
-
-
 // -------------------LLAMANDO AL CARRITO GUARDADO 🛒💾-----------------------------
 let carro = JSON.parse(localStorage.getItem('carroRecuperado')) || [];
 
@@ -228,7 +224,6 @@ function carritoMostrar(listaCarrito) {
   for (const product of listaCarrito) {
 
     if (product.cantidadEnCarrito < 2) {
-      console.log('Cartel 1');
       carritoMuestra.innerHTML += `
       <div class="card cardCarrito">
                   <img src=${product.imagenProducto} class="card-img-top" alt=${product.nombreProducto}>
@@ -295,14 +290,11 @@ function carritoMostrar(listaCarrito) {
   for (const boton of botonEliminar) {
     boton.addEventListener('click', () => {
 
-      console.log('Se eliminó: ' + boton.id)
-
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
 
       eliminaDeCarrito(seleccionado);
 
       if (carro.length == 0) {
-        console.log('CARRO VACIO')
         carritoVacio();
       } else {
         finalizarOvaciar();
@@ -321,16 +313,11 @@ function carritoMostrar(listaCarrito) {
 
       carritoMuestra.innerHTML = '';
 
-      console.log('Uno menos en: ' + boton.id)
-
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
-
-      console.log(seleccionado.cantidadEnCarrito);
 
       quitarUnoDelCarro(seleccionado);
 
       if (carro.length == 0) {
-        console.log('CARRO VACIO')
         carritoVacio();
       } else {
         finalizarOvaciar();
@@ -347,11 +334,7 @@ function carritoMostrar(listaCarrito) {
 
       carritoMuestra.innerHTML = '';
 
-      console.log('Uno mas en: ' + boton.id)
-
       const seleccionado = listaCarrito.find((producto) => producto.id == boton.id);
-
-      console.log(seleccionado.cantidadEnCarrito);
 
       subeUnoDelCarrito(seleccionado);
 
@@ -364,16 +347,11 @@ function carritoMostrar(listaCarrito) {
 //------------Quita uno ❌🧴
 function quitarUnoDelCarro(producto) {
 
-  console.log(producto.id);
-  console.log(producto.cantidadEnCarrito);
-
   if (producto.cantidadEnCarrito > 1) {
-    console.log('Menos uno')
     carro.map((prod) => {
       if (prod.id === producto.id) {
         prod.cantidadEnCarrito--;
       }
-      console.log(producto.cantidadEnCarrito);
       saveLocal();
     });
   } else {
@@ -388,12 +366,10 @@ function quitarUnoDelCarro(producto) {
 function subeUnoDelCarrito(producto) {
 
   if (producto.cantidadEnCarrito < producto.stock) {
-    console.log('Mas uno' + producto.cantidadEnCarrito);
     carro.map((prod) => {
       if (prod.id === producto.id) {
         prod.cantidadEnCarrito++;
       }
-      console.log(producto.cantidadEnCarrito);
       saveLocal();
     });
   } else {
@@ -417,7 +393,6 @@ const eliminaDeCarrito = (idEli) => {
 
   if (busca != -1) {
     carro.splice(busca, 1);
-    console.table(carro);
     saveLocal();
   }
 
@@ -450,8 +425,6 @@ const mostrarProductos = (listadoProductos) => {
 
   for (const boton of botones) {
     boton.addEventListener('click', () => {
-
-      console.log('Se clickeo boton ' + boton.id)
 
       const seleccionado = listadoProductos.find((producto) =>
         producto.id == boton.id);
@@ -490,12 +463,10 @@ function agregarAlCarrito(producto) {
     });
   } else if (repetido == false && stock < producto.stock) {
     carro.push(producto);
-    console.table(carro);
     saveLocal();
     carritoMostrar(carro);
     cartelAgregadoCarrito(producto);
   } else {
-    // alert('¡Lo sentimos! ¡No hay más stock del producto seleccionado! ❌');
     cartelNoMasStock(producto);
   }
 }
@@ -516,14 +487,12 @@ llamarInventario()
         prodFemeninos.push(inventario[i]);
       }
     }
-    console.table(prodFemeninos);
     //---------------Filtra productos masculinos 👨‍🦱👨‍🦱
     for (let i = 0; i < inventario.length; i++) {
       if (inventario[i].masculino == true) {
         prodMasculinos.push(inventario[i]);
       }
     }
-    console.log(prodMasculinos);
     //---------------Filtra productos solo de barba 👨‍🦱
     for (let i = 0; i < inventario.length; i++) {
       if (inventario[i].barba == true) {
@@ -542,7 +511,7 @@ llamarInventario()
 
 function precioMaxDes(array, precioMaximo, precioMinimo) {
   const filtrados = array.filter((producto) => producto.precio <= precioMaximo && producto.precio >= precioMinimo);
-  console.table(filtrados);
+
   filtrados.sort((x, y) => y.precio - x.precio);
 
   mostrarProductos(filtrados);
@@ -551,7 +520,7 @@ function precioMaxDes(array, precioMaximo, precioMinimo) {
 
 function precioMaxAs(array, precioMaximo, precioMinimo) {
   const filtrados = array.filter((producto) => producto.precio <= precioMaximo && producto.precio >= precioMinimo);
-  console.table(filtrados);
+
   filtrados.sort((x, y) => x.precio - y.precio);
 
   if (filtrados.length == 0) {
@@ -586,7 +555,6 @@ function cartelNoMasStock(producto) {
     icon: 'error',
     title: '¡Sin Stock!',
     text: 'No hay más stock del producto seleccionado: ' + producto.nombreProducto,
-    // footer: '<a href="">Why do I have this issue?</a>'
   })
 }
 
@@ -595,7 +563,6 @@ function cartelConAdvertencia(titleError, descripcionError) {
     icon: 'error',
     title: titleError,
     text: descripcionError
-    // footer: '<a href="">Why do I have this issue?</a>'
   })
 }
 

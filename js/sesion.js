@@ -29,7 +29,6 @@ const llamarUsuarios = () => {
 llamarUsuarios()
     .then((resp) => {
         usuarioT = resp
-        console.log(usuarioT);
 
         function inicioSesion(evento) {
 
@@ -54,7 +53,6 @@ llamarUsuarios()
                     evento.preventDefault();
                     cartelConAdvertencia('Usuario no encontrado', 'Lo sentimos, el nombre de usuario ingresado no existe.')
                 } else if (seleccionado2 == null) {
-                    console.log('Se alló usuario: ' + seleccionado.username);
                     if (seleccionado.password == inputPass) {
                         console.log('Contraseña correcta');
                         localStorage.setItem('sesionIniciada', JSON.stringify(seleccionado));
@@ -64,7 +62,6 @@ llamarUsuarios()
                         cartelConAdvertencia('Contraseña incorrecta.');
                     }
                 } else if (seleccionado == null) {
-                    console.log('Se alló usuario: ' + seleccionado2.username);
                     if (seleccionado2.password == inputPass) {
                         console.log('Contraseña correcta');
                         localStorage.setItem('sesionIniciada', JSON.stringify(seleccionado2));
@@ -263,8 +260,6 @@ function guardarDatos() {
     usuarioLocal.push(
         usuarioNuevo
     )
-
-    console.table(usuarioLocal);
 
     localStorage.setItem('usuariosR', JSON.stringify(usuarioLocal));
 
